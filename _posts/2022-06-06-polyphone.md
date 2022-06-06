@@ -1,10 +1,3 @@
----
-layout: post
-title: "Build a corpus for Chinese polyphone"
-date: 2022-06-06
-categories: zsh blogging
----
-
 # Build a corpus for Chinese polyphone 
 
 In Chinese Text-to-speech (TTS) applications, one key problem is to determine a phone for polyphones. In some cases, a phone can be determined within a word or phrase. For example, '为' can pronounce 'wei2' or 'wei4', in the word '以为' (in English, think), it must pronounce as 'wei2', and in the phrase '为人民服务'(in English, serve for people), it must pronounce as 'wei4'.
