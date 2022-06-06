@@ -1,6 +1,6 @@
 ---
-layout: post
-title: "Build a corpus for Chinese polyphone"
+layout: home
+title: "zsh blog"
 ---
 
 I have a blog
