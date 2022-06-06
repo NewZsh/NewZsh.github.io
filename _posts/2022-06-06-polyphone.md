@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Build a corpus for Chinese polyphone "
+title: "polyphone "
 date: 2022-06-06
 categories: zsh blogging
 ---
