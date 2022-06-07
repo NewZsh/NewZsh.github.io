@@ -8,9 +8,13 @@ title: "Siheng Zhang"
 ### personal information
 
 name: Zhang Siheng
+
 gender: male
+
 birth: 1993/05
+
 BirthIn: Shantou, Guangdong province, China
+
 LiveIn: Guangzhou, Guangdong province, China
 
 ### contact
@@ -24,6 +28,7 @@ LiveIn: Guangzhou, Guangdong province, China
 ### education
 
 2011/09-2015/07, Tsinghua University, Automation, Bachelor
+
 2015/09-2020/09, University of Chinese Academy of Scieneces (Institute of Automation, Chineses Academy of Sciences), Pattern Recognition and Intelligent System, Ph.D.
 
 ### research interest
