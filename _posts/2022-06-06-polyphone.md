@@ -23,18 +23,34 @@ Some extremely hard case are listed for fun:
 
 ## 1. How many polyphones are there in Chinese?
 
-BUT, remember the purpose of our study, we do not stop at assigning a phone to polyphones. The target is to build a TTS aaplication, which will face the following three problems:
 
-### 1.1. unstressed sound
+**remark**: remember the purpose of our study, we do not stop at assigning a phone to polyphones. The target is to build a TTS aaplication, which will face the following three problems:
+
+### a. unstressed sound
 Unstressed sound is a complex phenomenum (please refer to [2]). In short, some chracters are pronounced without tonic in usage.
 
-### 1.2. dialect
+### b. dialect
 If we expect the TTS application can adapt to personalized voice, we should tolerate some 'wrong' phones. For example, in north-east China, '那些' may pronounce as 'nei4 xie1'.
 
-### 1.3. ancient Chinese
+### c. ancient Chinese
 In ancient Chinese, some characters have extra phones. For example, '雨(yu3)' only has a single phone in modern Chinese, but in ancient Chinese, it can pronouce as 'yu4' (used as a verb, meaning 'falling like rain from the sky') like in '天雨雪' (in English, it snows).
 
-## 2.
+## 2. Spider
+
+## 3. Post-process
+
+## 4. Build model
+
+public data from:
+  https://github.com/kakaobrain/g2pM
+
+performace:
+
+|  acc   |  dev    | test  |
+|  ----  | ----    | ----  |
+| Chinese Bert	| 97.95 | 97.85 |
+| g2pM   | 97.36	| 97.31 |
+| ours   | 97.90  | 98.07 |
 
 ### Support or Contact
 
