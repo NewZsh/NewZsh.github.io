@@ -23,7 +23,50 @@ Some extremely hard case are listed for fun:
 
 ## 1. How many polyphones are there in Chinese?
 
+I start my work from previous works:
 
+- g2PM: https://github.com/kakaobrain/g2pM
+
+  In this repo, there is a CPP dataset with train/dev/test split. Besides, at path `./g2pM/digest_cedict.pkl`, the file records 791 polyphones (but some are rarely used, like '丌', '乀', and etc, I delete them by hand and get 374 polyphones). 
+  
+  Note that at path `./g2pM/class2idx`, there are 876 phones, but it is not complete. At least, it misses the following phones: huo5, he5, di5, xiong4, xue4, deng1, lv3, long5, hong5, xie3, zheng5, dou5, fen5, gan5, pai3, dang5, feng5, lv4, tiao5, chu5, fang5, ha4.
+  
+- phrase-pinyin-data: https://github.com/mozillazg/phrase-pinyin-data
+
+  In this repo, `./large-pinyin.txt` a large collected table for phrase and phones. I collect the characters with different phones and get the words and phrases that they in. For example, 
+  
+  > 行 xíng	一一行行/一一行行/一介行人/一介行李/一意孤行/ ……
+  > 
+	>   háng	一分行情一分货/一百二十行/一目五行/一目十行/一目数行/ ……
+	>   
+	>   xí	便把令来行
+	>   
+	>   hàng	树行子
+	>   
+	>   xing	言信行直
+	>   
+	>   héng	道行
+
+  It is too dirty! 
+  
+  Luckily, '行' in `g2PM` repo only has two phones: 'xing2', 'hang2'. It is feasible to use `g2PM` to filter this data! After filtering, I have a table containing 115260 words and phrases, each one corresponds to a polyphones (I will call it `PCP-table`). For example:
+  
+  > 清浄无为	{"为": "wei2"}
+  > 
+  > 痛痛切切	{"切": \["qie4"\]}
+  > 
+  > 调调	{"调": \["diao4"\]}
+  > 
+  > 走了和尚走不了寺	{"了": \["le", "liao3"\]}
+  > 
+  > 好善恶恶	{"恶": \["wu4", "e4"\]}
+
+The first line is an example that the word contains only one goal polyphone, and the phone is recorded as string type. The second and third lines are examples that the word contains multiple goal polyphones with **SAME** phone, and the phone is recorded as list type. The fourth and fifth lines are examples that the word contains multiple goal polyohoens with **DIFFERERENT** phones, and the order corresponds to its order in the word **one by one**.
+  
+- official dictionary: https://github.com/CNMan/XDHYCD7th/blob/master/XDHYCD7th.txt
+
+  Finally, I use it to adjust some remainning error. For example, '部分' is wrongly labelled as 'bu4 fen4', but the true label is 'bu4 fen5'. (The online dictionary has some typos too. I strongly recommend you to buy a print version on hand!)
+  
 **remark**: remember the purpose of our study, we do not stop at assigning a phone to polyphones. The target is to build a TTS aaplication, which will face the following three problems:
 
 ### a. unstressed sound
@@ -36,6 +79,53 @@ If we expect the TTS application can adapt to personalized voice, we should tole
 In ancient Chinese, some characters have extra phones. For example, '雨(yu3)' only has a single phone in modern Chinese, but in ancient Chinese, it can pronouce as 'yu4' (used as a verb, meaning 'falling like rain from the sky') like in '天雨雪' (in English, it snows).
 
 ## 2. Spider
+
+  The `PCP-table` is treated as correct label, now the task is to get some sentences containing the words and phrases. Here I use [Ba](https://baike.baidu.com/) as a source. Codes here ~:
+  
+```python3
+from lxml import etree
+import requests
+import json
+from urllib.parse import quote
+
+USER_AGENT = 'XXXX'
+
+# load PCP_table
+
+nn = 0
+for word, phone in PCP_table:
+    resp = requests.get('https://baike.baidu.com/item/%s' % (quote(word)),
+            headers={'User-Agent': USER_AGENT},
+            timeout=5
+        )
+
+    if '您所访问的页面不存在' in resp.content.decode():
+        continue
+
+    time.sleep(0.1)
+    html = etree.HTML(resp.text)
+
+    elements = html.xpath('//div[@class="lemmaWgt-subLemmaListTitle"]')
+    if len(elements) > 0:
+        signal = ''.join(elements[0].xpath('.//text()')).strip()
+        if signal.startswith('这是一个多义词'):
+            for item in html.xpath('//*[starts-with(@href, "/item")]'):
+                if ''.join(item.xpath('./text()')) == '%s：汉语词汇' % word:
+                    url = 'https://baike.baidu.com' + item.xpath('./@href')[0]
+                    resp = requests.get(url,
+                            headers={'User-Agent': USER_AGENT},
+                            timeout=5
+                        )
+                    html = etree.HTML(resp.text)
+
+    # get sentences
+    for i in html.xpath('.//div[@class="para"]'):
+        t = ''.join(i.xpath('.//text()')).strip().replace('\n', '').replace(' ', '')
+        if word in t and len(t) > len(word) + 10 and ('读音' not in t and '汉语词语' not in t):
+            f = open('sentence.txt', 'a+')
+            f.write(json.dumps({'sentence': t, 'word': word, 'phone': phone}) + '\n')
+            f.close()
+```
 
 ## 3. Post-process
 
