@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "coherence "
+title: "Bussisness Knowledge Graph"
 date: 2022-06-06
 categories: zsh blogging
 ---
