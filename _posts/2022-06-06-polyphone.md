@@ -7,6 +7,8 @@ categories: zsh blogging
 
 ## Build a corpus for Chinese polyphone 
 
+**Chinese version [https://newzsh.github.io/zsh/blogging/2022/06/06/polyphone.html]**
+
 In Chinese Text-to-speech (TTS) applications, one key problem is to determine a phone for polyphones. In some cases, a phone can be determined within a word or phrase. For example, '为' can pronounce 'wei2' or 'wei4', in the word '以为' (in English, think), it must pronounce as 'wei2', and in the phrase '为人民服务'(in English, serve for people), it must pronounce as 'wei4'.
 
 However, if we can determine the phone with a large table of collected word or phrase, things get easier and NLP will not be recognized to be hard. There are two problems that come up:
