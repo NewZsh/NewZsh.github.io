@@ -80,61 +80,6 @@ If we expect the TTS application can adapt to personalized voice, we should tole
 ### c. ancient Chinese
 In ancient Chinese, some characters have extra phones. For example, '雨(yu3)' only has a single phone in modern Chinese, but in ancient Chinese, it can pronouce as 'yu4' (used as a verb, meaning 'falling like rain from the sky') like in '天雨雪' (in English, it snows).
 
-## 2. Spider
-
-  The `PCP-table` is treated as correct label, now the task is to get some sentences containing the words and phrases. Here I use [Ba](https://baike.baidu.com/) as a source. Codes here ~:
-  
-```python3
-from lxml import etree
-import requests
-import json
-from urllib.parse import quote
-
-USER_AGENT = 'XXXX'
-
-# load PCP_table
-
-nn = 0
-for word, phone in PCP_table:
-    resp = requests.get('https://baike.baidu.com/item/%s' % (quote(word)),
-            headers={'User-Agent': USER_AGENT},
-            timeout=5
-        )
-
-    if '您所访问的页面不存在' in resp.content.decode():
-        continue
-
-    time.sleep(0.1)
-    html = etree.HTML(resp.text)
-
-    elements = html.xpath('//div[@class="lemmaWgt-subLemmaListTitle"]')
-    if len(elements) > 0:
-        signal = ''.join(elements[0].xpath('.//text()')).strip()
-        if signal.startswith('这是一个多义词'):
-            for item in html.xpath('//*[starts-with(@href, "/item")]'):
-                if ''.join(item.xpath('./text()')) == '%s：汉语词汇' % word:
-                    url = 'https://baike.baidu.com' + item.xpath('./@href')[0]
-                    resp = requests.get(url,
-                            headers={'User-Agent': USER_AGENT},
-                            timeout=5
-                        )
-                    html = etree.HTML(resp.text)
-
-    # get sentences
-    for i in html.xpath('.//div[@class="para"]'):
-        t = ''.join(i.xpath('.//text()')).strip().replace('\n', '').replace(' ', '')
-        if word in t and len(t) > len(word) + 10 and ('读音' not in t and '汉语词语' not in t):
-            f = open('sentence.txt', 'a+')
-            f.write(json.dumps({'sentence': t, 'word': word, 'phone': phone}) + '\n')
-            f.close()
-```
-
-## 3. Post-process
-
-## 4. Build model
-
-public data from:
-  https://github.com/kakaobrain/g2pM
 
 performace:
 
