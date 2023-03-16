@@ -79,21 +79,3 @@ If we expect the TTS application can adapt to personalized voice, we should tole
 
 ### c. ancient Chinese
 In ancient Chinese, some characters have extra phones. For example, '雨(yu3)' only has a single phone in modern Chinese, but in ancient Chinese, it can pronouce as 'yu4' (used as a verb, meaning 'falling like rain from the sky') like in '天雨雪' (in English, it snows).
-
-
-performace:
-
-|  acc   |  dev    | test  |
-|  ----  | ----    | ----  |
-| Chinese Bert	| 97.95 | 97.85 |
-| g2pM   | 97.36	| 97.31 |
-| ours   | 97.90  | 98.07 |
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
-
-
-# reference
-[1] jieba
-[2] Unstressed sound: https://baike.baidu.com/item/%E8%BD%BB%E5%A3%B0/5667261?fr=aladdin
