@@ -36,9 +36,9 @@ categories: zsh blogging
 
 Chinese Polyphone with Pinyin (CPP), 见[g2pM](https://github.com/kakaobrain/g2pM)，应该是当前唯一公开的中文多音字数据集，包含了训练、验证和测试集的切分。然而其中的错误非常多，末尾的附录会详细说明。这里介绍我如何构建语料：
 
-1. 首先搞清楚，中文有多少个常用多音字。[g2pM](https://github.com/kakaobrain/g2pM)中， `./g2pM/digest_cedict.pkl`记录了汉字的读音，但是其中有一些多音字（'丌', '乀'等）不常用，也有字的读音出现缺少、增多或者错误，我手动修改了多音字读音（注意，非多音字的字的读音未经检查）,原有791个多音字，经过修改后有612个。（此外，`./g2pM/class2idx.pkl`文件其实没什么用。）
+1) 首先搞清楚，中文有多少个常用多音字。[g2pM](https://github.com/kakaobrain/g2pM)中， `./g2pM/digest_cedict.pkl`记录了汉字的读音，但是其中有一些多音字（'丌', '乀'等）不常用，也有字的读音出现缺少、增多或者错误，我手动修改了多音字读音（注意，非多音字的字的读音未经检查）,原有791个多音字，经过修改后有612个。（此外，`./g2pM/class2idx.pkl`文件其实没什么用。）
   
-2. 搜集拼音下的组词。[phrase-pinyin-data](https://github.com/mozillazg/phrase-pinyin-data)中，`./large-pinyin.txt`搜集了大量的词语和对应的读音。经过处理，可以得到多音字的不同读音能组成什么词语。例子如下：
+2) 搜集拼音下的组词。[phrase-pinyin-data](https://github.com/mozillazg/phrase-pinyin-data)中，`./large-pinyin.txt`搜集了大量的词语和对应的读音。经过处理，可以得到多音字的不同读音能组成什么词语。例子如下：
 
        行 xíng	一一行行/一一行行/一介行人/一介行李/一意孤行/ ……
           háng	一分行情一分货/一百二十行/一目五行/一目十行/一目数行/ ……
@@ -55,13 +55,18 @@ Chinese Polyphone with Pinyin (CPP), 见[g2pM](https://github.com/kakaobrain/g2p
        走了和尚走不了寺	{"了": \["le", "liao3"\]}
        好善恶恶	{"恶": \["wu4", "e4"\]}
   
-3. 使用权威字典检查PCP表。[MCD7](https://github.com/CNMan/XDHYCD7th/blob/master/XDHYCD7th.txt)是现代汉语词典（第七版）的线上版本（其中包含部分错误，我强烈建议大家买一本纸质版放在手边），可以用于矫正PCP表格的错误。具体的实现过程是通过遍历比较，捞回读音不一致的词语，然后人工审核。例如，'部分'标注的是'bu4 fen4'，但是正确的'bu4 fen5'。
+3) 使用权威字典检查PCP表。[MCD7](https://github.com/CNMan/XDHYCD7th/blob/master/XDHYCD7th.txt)是现代汉语词典（第七版）的线上版本（其中包含部分错误，我强烈建议大家买一本纸质版放在手边），可以用于矫正PCP表格的错误。具体的实现过程是通过遍历比较，捞回读音不一致的词语，然后人工审核。例如，'部分'标注的是'bu4 fen4'，但是正确的'bu4 fen5'。
 
-4. 爬取语料并清洗。对PCP表中的每个词语，爬取百度百科的词条并清洗语料，爬取过程见附录。清洗
+4) 爬取语料并清洗。对PCP表中的每个词语，爬取百度百科的词条并清洗语料，爬取过程见附录。清洗
 
 ## 3. 模型
 
-1. 测试标准
+1) 测试标准
+
+因为[汉字使用频率是一个长尾分布](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=c4d9763155af1b91d09d590a521b166109d0de33)，且在一些多音字中某个读音占据绝对主导，所以，简单使用准确率来做评价是不客观的。借鉴[g2pW](https://github.com/GitYCC/g2pW/)代码，除了准确率之外，我采用了其它两种评价方式：
+
+- 按字平均的准确率(Acc. avg.by.p)，即对每个多音字统计正确率，然后做平均
+- 按字的每个音平均的准确率(Acc. avg.by.pp)，即对每个多音字的每个读音统计正确率，然后做平均
 
 2. 性能
 
@@ -243,6 +248,7 @@ TTS合成方言可以考虑两个路线，一个是基于规范音素合成带�
 4) 特殊读音
 
  以上有一些读音涉及人名、地名或者专有名词、音译等，读音以CCTV节目播音为准，列举如下：
+ 
   | 词 | 拼音 | CCTV参考链接 |
   | -- | -- | -- |
   | 阿▁塞▁拜疆 | sai4 | http://m.app.cctv.com/vsetv/detail/C10616/7fbd1da7e8f845ec9a592d03c57e1df1/index.shtml | 
