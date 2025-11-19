@@ -23,7 +23,7 @@ InterSpeech、EMNLP等顶会，NeuroComputing、KAIS等SCI。详见：https://sc
 ### 工作经历
 
 - 2020/07 至今, 广州视源电子科技股份有限公司 (CVTE，http://www.cvte.com/), 高级研究员，广州
-    - seewo 教育大模型，用于课堂观察、作业批改、绘本伴读等场景
+    - seewo 教育大模型，用于课堂观察、作业批改、绘本伴读、教师agent等
 
 ### 教育经历
 

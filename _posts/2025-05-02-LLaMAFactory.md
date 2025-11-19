@@ -7,10 +7,11 @@ categories: zsh blogging
 learning based on [this version] (https://github.com/hiyouga/LLaMA-Factory/tree/59a56f7226f24b3b8c37b6a4da0a5802b4022ead)
 
 背景：训练know how的几个维度
-      - 数据（预处理、质量、比例）
-      - 训练技巧（退火、平均，packing/batching）
-      - 训练框架（超参数、损失函数计算、框架逻辑、训练效率）
-      - 训练结果评估（通用评测基本复现公开结果，场景评测需要增加可自动化的底线benchmark）
+
+- 数据（预处理、质量、比例）
+- 训练技巧（退火、平均，packing/batching）
+- 训练框架（超参数、损失函数计算、框架逻辑、训练效率）
+- 训练结果评估（通用评测基本复现公开结果，场景评测需要增加可自动化的底线benchmark）
 
 代码框架
 ```
@@ -33,9 +34,7 @@ learning based on [this version] (https://github.com/hiyouga/LLaMA-Factory/tree/
     |   |   |   |   ├── trainer.py
     |   |   |   |   ├── workflow.py: `run_sft`
     |   |   |   ├── trainer_utils.py: `get_ray_trainer`
-    |   |   |   ├── tuner.py: `run_exp` -->（关键参数 ray_args.use_ray） `get_ray_trainer` /--> `_training_function`
-              --> model_args, data_args, training_args, finetuning_args, generating_args = get_train_args(args) 
-              -->（关键参数finetuning_args.stage）run_pt/sft/rm/ppo/dpo/kto
+    |   |   |   ├── tuner.py: `run_exp` -->（关键参数 ray_args.use_ray） `get_ray_trainer` /--> `_training_function` --> model_args, data_args, training_args, finetuning_args, generating_args = get_train_args(args)  -->（关键参数finetuning_args.stage）run_pt/sft/rm/ppo/dpo/kto
     |   ├── train.py: --> `run_exp`
 ```
 
@@ -82,7 +81,7 @@ learning based on [this version] (https://github.com/hiyouga/LLaMA-Factory/tree/
     - 系数：forward + backward + re-activation = 1 + 2 + 1 = 4，每个参数，一次乘法，一次加法，系数就是8
     - 8 * tokens * n_params / (n_GPU * GPU_flops * MFU_ratio) = 训练时间
     - 实际可以通过训练时间计算MFU_ratio：也就是我们的硬件使用率，注意如果没有re-activation，系数是6即可
-[图片]
+- [图片]
       - 以GPT3-175B为例，6*174600M*300B = 3.1428E+23（表格第二列）
         - 原文中说了是V100显卡。原文没有说训练时间，普遍说法是512张V100是7个月，1024张A100是1个月
         - A100的MFU = 3.1428E+23 / (1024* 312 TFlops * 30 * 86400) = 37.9%
@@ -104,11 +103,11 @@ learning based on [this version] (https://github.com/hiyouga/LLaMA-Factory/tree/
       [ ] Packing without neat packing
       [x] Packing with neat packing
     - PrertainDatasetProcessor 对 loss 的影响？
-      [] No packing
-      [] Packing without neat packing
-      [] Packing with neat packing （ref：https://github.com/hiyouga/LLaMA-Factory/issues/5601）
-      [] 考虑到我们的预处理已经把长文本切段落了？（ref： 文本分割、预训练数据标注规范，需要确认），如何恢复超长（>= 32k token）文本的训练？
-      [] 在不同的数据集配比（预训练语料）下，是否结论仍然成立？
+      [ ] No packing
+      [ ] Packing without neat packing
+      [ ] Packing with neat packing （ref：https://github.com/hiyouga/LLaMA-Factory/issues/5601）
+      [ ] 考虑到我们的预处理已经把长文本切段落了？（ref： 文本分割、预训练数据标注规范，需要确认），如何恢复超长（>= 32k token）文本的训练？
+      [ ] 在不同的数据集配比（预训练语料）下，是否结论仍然成立？
 
     ```python
     class PretrainDatasetProcessor(DatasetProcessor):
@@ -155,7 +154,7 @@ learning based on [this version] (https://github.com/hiyouga/LLaMA-Factory/tree/
         ) -> tuple[list[int], list[int]]:
             messages = self.template.mm_plugin.process_messages(prompt + response, images, videos, audios, self.processor)
             input_ids, labels = self.template.mm_plugin.process_token_ids(
-                [], [], images, videos, audios, self.tokenizer, self.processor
+                [ ], [ ], images, videos, audios, self.tokenizer, self.processor
             )
             encoded_pairs = self.template.encode_multiturn(self.tokenizer, messages, system, tools)
             total_length = len(input_ids) + (1 if self.template.efficient_eos else 0)
@@ -214,9 +213,9 @@ learning based on [this version] (https://github.com/hiyouga/LLaMA-Factory/tree/
                     response=examples["_response"][i],
                     system=examples["_system"][i],
                     tools=examples["_tools"][i],
-                    images=examples["_images"][i] or [],
-                    videos=examples["_videos"][i] or [],
-                    audios=examples["_audios"][i] or [],
+                    images=examples["_images"][i] or [ ],
+                    videos=examples["_videos"][i] or [ ],
+                    audios=examples["_audios"][i] or [ ],
                 )
                 model_inputs["input_ids"].append(input_ids)
                 model_inputs["attention_mask"].append([1] * len(input_ids))
@@ -233,8 +232,8 @@ learning based on [this version] (https://github.com/hiyouga/LLaMA-Factory/tree/
             # build inputs with format <bos> X1 Y1 <eos> <bos> X2 Y2 <eos>
             # and labels with format <ignore> ... <ignore> Y1 <eos> <ignore> ... <ignore> Y2 <eos>
             valid_num = 0
-            batch_input_ids, batch_labels, batch_images, batch_videos, batch_audios = [], [], [], [], []
-            lengths = []
+            batch_input_ids, batch_labels, batch_images, batch_videos, batch_audios = [ ], [ ], [ ], [ ], [ ]
+            lengths = [ ]
             length2indexes = defaultdict(list)
             for i in range(len(examples["_prompt"])):
                 if len(examples["_prompt"][i]) % 2 != 1 or len(examples["_response"][i]) != 1:
@@ -248,9 +247,9 @@ learning based on [this version] (https://github.com/hiyouga/LLaMA-Factory/tree/
                     response=examples["_response"][i],
                     system=examples["_system"][i],
                     tools=examples["_tools"][i],
-                    images=examples["_images"][i] or [],
-                    videos=examples["_videos"][i] or [],
-                    audios=examples["_audios"][i] or [],
+                    images=examples["_images"][i] or [ ],
+                    videos=examples["_videos"][i] or [ ],
+                    audios=examples["_audios"][i] or [ ],
                 )
                 length = len(input_ids)
                 if length > self.data_args.cutoff_len:
@@ -260,16 +259,16 @@ learning based on [this version] (https://github.com/hiyouga/LLaMA-Factory/tree/
                     length2indexes[length].append(valid_num)
                     batch_input_ids.append(input_ids)
                     batch_labels.append(labels)
-                    batch_images.append(examples["_images"][i] or [])
-                    batch_videos.append(examples["_videos"][i] or [])
-                    batch_audios.append(examples["_audios"][i] or [])
+                    batch_images.append(examples["_images"][i] or [ ])
+                    batch_videos.append(examples["_videos"][i] or [ ])
+                    batch_audios.append(examples["_audios"][i] or [ ])
                     valid_num += 1
 
             model_inputs = defaultdict(list)
             knapsacks = greedy_knapsack(lengths, self.data_args.cutoff_len)
             for knapsack in knapsacks:
-                packed_input_ids, packed_attention_masks, packed_labels = [], [], []
-                packed_images, packed_videos, packed_audios = [], [], []
+                packed_input_ids, packed_attention_masks, packed_labels = [ ], [ ], [ ]
+                packed_images, packed_videos, packed_audios = [ ], [ ], [ ]
                 for i, length in enumerate(knapsack):
                     index = length2indexes[length].pop()
                     packed_input_ids += batch_input_ids[index]
@@ -312,25 +311,16 @@ learning based on [this version] (https://github.com/hiyouga/LLaMA-Factory/tree/
 - --tokenized_path $TOKENIZED_PATH  ## 缓存tokenizer处理后的dataset
 
 ### experiments checklist
-[x] GPU 效率检查（1. 理论上的batch size计算；2. 功耗、利用率）
-[] length 分布，在tokenizer过程中获取长度分布
-[] dynamic_len  VS packing？
-  [] 效率对比？
-  [] 性能对比？
-  [] 在不同的数据集配比下，是否结论仍然成立？
-[] chat template: think
-[] packing时候长短文本loss是否需要平衡长度的影响？
-[] Learning rate schedule的调研
-  [] 业界最佳实践？
-  [] 不同schedule的loss对比和效果对比
-  [] 在不同的数据集配比（预训练语料）下，是否结论仍然成立？
-[] 如何快速验证模型的性能，减少人工评测？：底线思维，不满足底线的模型产出不认可（需集体评议）
-  [] Prompt editing：定向替换垂直任务SFT数据中的一些文本，查看模型是否过拟合
-    [] 内容替换：如会议中替换一个章节的讨论，课堂中替换一个问答片段
-    [] 格式替换：json  md   文本，few shot，查看格式遵循的能力是否被退化了（格式是否需要支持few shot？避免业务未来的不同需求都要反复搞，参考课堂观察的json、会议的markdown，这里的问题在于前段的渲染支持不同规则，虽然都是markdown大类，此处需要集体讨论和决策）
-  [] 量化之后和原始版本的输出相似度越高，说明模型越稳定（对参数精度损失不敏感）？
-  [] 其他？（需要调研）
-
+- [x] GPU 效率检查（1. 理论上的batch size计算；2. 功耗、利用率）
+- [ ] length 分布，在tokenizer过程中获取长度分布
+- [ ] dynamic_len  VS packing: 效率对比？性能对比？在不同的数据集配比下，是否结论仍然成立？
+- [ ] packing时候长短文本loss是否需要平衡长度的影响？
+- [ ] Learning rate schedule的调研：业界最佳实践？不同schedule的loss对比和效果对比？在不同的数据集配比（预训练语料）下，是否结论仍然成立？
+- [ ] 如何快速验证模型的性能，减少人工评测：底线思维，不满足底线的模型产出不认可
+  - [ ] Prompt editing：定向替换垂直任务SFT数据中的一些文本，查看模型是否过拟合
+  - [ ] 内容替换：如会议中替换一个章节的讨论，课堂中替换一个问答片段
+  - [ ] 格式替换：json  md   文本，few shot，查看格式遵循的能力是否被退化了（格式是否需要支持few shot？避免业务未来的不同需求都要反复搞）
+  - [ ] 量化之后和原始版本的输出相似度越高，说明模型越稳定（对参数精度损失不敏感）？
 
 ##### remark 运行脚本
 - 单机多卡
