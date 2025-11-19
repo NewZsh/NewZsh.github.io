@@ -1,23 +1,102 @@
 ---
 layout: default
 ---
+<style>
+  .post {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  .post-header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .post-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    color: #24292e;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  .post-meta {
+    font-size: 1rem;
+    color: #586069;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .featured-image {
+    margin: 2rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .post-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #24292e;
+  }
+  
+  .post-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-weight: 600; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+  .post-content h3 { margin-top: 2rem; margin-bottom: 1rem; font-weight: 600; }
+  .post-content p { margin-bottom: 1.5rem; }
+  .post-content img { max-width: 100%; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .post-content blockquote { 
+    border-left: 4px solid #dfe2e5; 
+    color: #6a737d; 
+    padding-left: 1rem; 
+    margin-left: 0; 
+    font-style: italic;
+  }
+  .post-content code {
+    background-color: rgba(27,31,35,0.05);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 85%;
+  }
+  .post-content pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+</style>
+
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    {% if page.featured_image %}
-      <div class="featured-image">
-          <img src="{{ "/assets/" | append: page.featured_image | relative_url }}" />
-      </div>
-    {% endif %}
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
+        {%- assign date_format = site.minima.date_format | default: "%Y-%m-%d" -%}
+        📅 {{ page.date | date: date_format }}
       </time>
       {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}</p>
+        <span class="post-author-separator">•</span>
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          👤 <span class="p-author h-card" itemprop="name">{{ page.author }}</span>
+        </span>
+      {%- endif -%}
+    </p>
+
+    {% if page.featured_image %}
+      <div class="featured-image">
+          <img src="{{ "/assets/" | append: page.featured_image | relative_url }}" alt="{{ page.title | escape }}" />
+      </div>
+    {% endif %}
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
