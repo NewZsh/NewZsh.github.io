@@ -4,10 +4,10 @@
   
   <input name="fields[parent_id]" type="hidden" value="{{ include.parent_id }}">
   
-  <textarea id="message-{{ include.parent_id }}" class="comment-message" name="fields[message]" placeholder="Comment (markdown accepted)" required></textarea>
+  <textarea id="message-{{ include.parent_id }}" class="comment-message" name="fields[message]" placeholder="写下你的评论 (支持 Markdown)" required></textarea>
   <div class="comment-bottom">
-    <input class="comment-name" name="fields[name]" type="text" placeholder="Name" required>
-    <button class="comment-submit" type="submit">SEND</button>
+    <input class="comment-name" name="fields[name]" type="text" placeholder="昵称 (必填)" required>
+    <button class="comment-submit" type="submit">发送评论</button>
   </div>  
 </form>
 
@@ -17,6 +17,6 @@
       forceSync: true,
       spellChecker: false,
       status: false,
-      placeholder: 'Comment (markdown supported)'
+      placeholder: '写下你的评论 (支持 Markdown语法)...'
   });
 </script>

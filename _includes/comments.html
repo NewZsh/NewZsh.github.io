@@ -1,13 +1,104 @@
-<section class="comments">    
+<style>
+  .comments-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eaecef;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+
+  .comments-title, .comment-form-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #24292e;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .comments-list-container {
+    margin-bottom: 3rem;
+  }
+
+  .comment-form-wrapper {
+    background: #f6f8fa;
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid #e1e4e8;
+  }
+
+  /* Styles for the form elements inside comment-form.html */
+  .comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .comment-message {
+    width: 100%;
+    min-height: 120px;
+    padding: 0.75rem;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    font-size: 1rem;
+    resize: vertical;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fff;
+  }
+
+  .comment-message:focus {
+    border-color: #0366d6;
+    box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.3);
+    outline: none;
+  }
+
+  .comment-bottom {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .comment-name {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+
+  .comment-submit {
+    background-color: #2ea44f;
+    color: white;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .comment-submit:hover {
+    background-color: #2c974b;
+  }
+</style>
+
+<section class="comments-section">
   {% if site.data.comments[page.slug] %}
-    <div>
-      <h2>Comments</h2>
-      {% include comment-list.html %}
+    <div class="comments-list-container">
+      <h2 class="comments-title">🗨️ 评论区</h2>
+      <div class="comments-list">
+        {% include comment-list.html %}
+      </div>
     </div>
   {% endif %}
 
-  <div class="comment-new">
-    <h2>Leave a Comment</h2>
-    {% include comment-form.html %}
+  <div class="comment-form-container">
+    <h2 class="comment-form-title">💬 发表新评论</h2>
+    <div class="comment-form-wrapper">
+      {% include comment-form.html %}
+    </div>
   </div>
 </section>
