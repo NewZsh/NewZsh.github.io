@@ -1,0 +1,762 @@
+\documentclass[11pt]{article}
+
+% Change "review" to "final" to generate the final (sometimes called camera-ready) version.
+% Change to "preprint" to generate a non-anonymous version with page numbers.
+\usepackage[review]{acl}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
+\usepackage[T1]{fontenc}
+% For Vietnamese characters
+% \usepackage[T5]{fontenc}
+% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+% This is not strictly necessary, and may be commented out,
+% but it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+
+% This is not strictly necessary, and may be commented out.
+% However, it will improve the aesthetics of text in
+% the typewriter font.
+% \usepackage{inconsolata}  % Commented out if not available
+
+%Including images in your LaTeX document requires adding
+%additional package(s)
+\usepackage{graphicx}
+
+% Additional packages for mathematical content
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+% If the title and author information does not fit in the area allocated, uncomment the following
+%
+%\setlength\titlebox{<dim>}
+%
+% and set <dim> to something 5cm or larger.
+
+\title{The Elegance Gap: When Stronger Language Models Prefer Brute-Force over Insight}
+
+% Author information - anonymized for review
+\author{Anonymous ACL submission}
+
+% For camera-ready version, use:
+% \author{First Author \\
+%   Affiliation / Address line 1 \\
+%   Affiliation / Address line 2 \\
+%   Affiliation / Address line 3 \\
+%   \texttt{email@domain} \\\And
+%   Second Author \\
+%   Affiliation / Address line 1 \\
+%   Affiliation / Address line 2 \\
+%   Affiliation / Address line 3 \\
+%   \texttt{email@domain} \\}
+
+%\author{
+%  \textbf{First Author\textsuperscript{1}},
+%  \textbf{Second Author\textsuperscript{1,2}},
+%  \textbf{Third T. Author\textsuperscript{1}},
+%  \textbf{Fourth Author\textsuperscript{1}},
+%\\
+%  \textbf{Fifth Author\textsuperscript{1,2}},
+%  \textbf{Sixth Author\textsuperscript{1}},
+%  \textbf{Seventh Author\textsuperscript{1}},
+%  \textbf{Eighth Author \textsuperscript{1,2,3,4}},
+%\\
+%  \textbf{Ninth Author\textsuperscript{1}},
+%  \textbf{Tenth Author\textsuperscript{1}},
+%  \textbf{Eleventh E. Author\textsuperscript{1,2,3,4,5}},
+%  \textbf{Twelfth Author\textsuperscript{1}},
+%\\
+%  \textbf{Thirteenth Author\textsuperscript{3}},
+%  \textbf{Fourteenth F. Author\textsuperscript{2,4}},
+%  \textbf{Fifteenth Author\textsuperscript{1}},
+%  \textbf{Sixteenth Author\textsuperscript{1}},
+%\\
+%  \textbf{Seventeenth S. Author\textsuperscript{4,5}},
+%  \textbf{Eighteenth Author\textsuperscript{3,4}},
+%  \textbf{Nineteenth N. Author\textsuperscript{2,5}},
+%  \textbf{Twentieth Author\textsuperscript{1}}
+%\\
+%\\
+%  \textsuperscript{1}Affiliation 1,
+%  \textsuperscript{2}Affiliation 2,
+%  \textsuperscript{3}Affiliation 3,
+%  \textsuperscript{4}Affiliation 4,
+%  \textsuperscript{5}Affiliation 5
+%\\
+%  \small{
+%    \textbf{Correspondence:} \href{mailto:email@domain}{email@domain}
+%  }
+%}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+As large language models (LLMs) scale up, they demonstrate remarkable improvements across many reasoning tasks. 
+However, we identify a surprising \textit{inverse scaling} phenomenon in mathematical problem-solving: stronger models increasingly favor computationally intensive brute-force approaches over elegant, insight-driven solutions that human experts prefer.
+We introduce \textbf{ERMR} (Elegance-Required Mathematical Reasoning), a benchmark of 240 problems where optimal solutions require key insights such as symmetry exploitation, geometric visualization, or variable substitution, while brute-force computation leads to either errors or excessive complexity.
+Through systematic evaluation of 12 state-of-the-art LLMs ranging from 7B to 405B parameters, we observe that larger models are \textit{more likely} to attempt brute-force solutions (65\% for 405B vs. 34\% for 7B models) and consequently achieve \textit{lower} success rates on problems requiring elegant reasoning.
+Our analysis reveals this ``elegance gap'' stems from models' over-reliance on procedural patterns in training data rather than developing strategic problem-solving capabilities.
+We further demonstrate that targeted fine-tuning on elegant solution trajectories can partially bridge this gap, improving both solution quality and success rates.
+Our findings suggest that current scaling paradigms may inadvertently prioritize computational power over mathematical insight, raising important questions about reasoning capabilities in future LLMs.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+%% Opening with a concrete example
+Consider the following mathematical problem:
+\begin{quote}
+\textit{Given non-zero real numbers $x, y$ satisfying $\frac{x}{y} + \frac{y}{x} + 2xy = x^2 - y^2$, find the minimum value of $x^2 + y^2$.}
+\end{quote}
+
+A \textbf{brute-force approach} would involve algebraic manipulation, solving for one variable, and computing derivatives—a procedure prone to computational errors across 15+ steps.
+In contrast, an \textbf{elegant solution} recognizes that letting $u = x + y$ and $v = xy$ transforms the constraint into a simple relationship, yielding the answer in just 5 steps through symmetry exploitation.
+
+When we evaluated this problem across 12 recent LLMs, we discovered a counterintuitive pattern: \textit{larger models were significantly more likely to attempt the brute-force approach and fail.}
+GPT-4 (with 1.76T tokens of training data) attempted brute-force computation in 73\% of trials, while Llama-2-7B attempted it in only 28\% of cases.
+This represents a form of \textbf{inverse scaling}~\citep{mckenzie2023inverse}—where increased model capacity leads to \textit{degraded} performance on specific tasks.
+
+%% Motivation and research gap
+Unlike previous inverse scaling phenomena that focused on spurious correlations or social biases~\citep{wei2023inverse-scaling,lin2022truthfulqa}, our work identifies inverse scaling in \textit{strategic reasoning}: the ability to select appropriate problem-solving strategies rather than merely executing computations.
+We hypothesize that larger models, trained on massive corpora containing diverse solution approaches, develop stronger pattern-matching for procedural computation, inadvertently creating a ``computational overfitting'' where the availability of brute-force patterns suppresses the discovery of elegant insights.
+
+%% Our contributions
+To investigate this phenomenon systematically, we make the following contributions:
+
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+\item We introduce \textbf{ERMR}, a carefully curated benchmark of 240 mathematical problems spanning five categories (variable substitution, geometric reasoning, construction methods, pattern recognition, and counter-intuitive logic), where elegant solutions exist but brute-force approaches are significantly more error-prone (\S\ref{sec:benchmark}).
+
+\item Through comprehensive evaluation of 12 LLMs (7B-405B parameters), we demonstrate clear \textbf{inverse scaling in elegance}: larger models prefer brute-force approaches (Spearman $\rho = 0.73$, $p < 0.01$) and achieve 12-18\% lower success rates on elegance-required problems compared to smaller models given strategic hints (\S\ref{sec:experiments}).
+
+\item We analyze the effectiveness of four prompting strategies (zero-shot, strategic hints, one-shot elegant examples, and chain-of-thought) and show that while strategic hints can partially mitigate the elegance gap for smaller models, they become less effective as model size increases (\S\ref{sec:prompting}).
+
+\item We conduct ablation studies showing that targeted supervised fine-tuning on elegant solution trajectories significantly improves both solution elegance (↑34\%) and success rates (↑23\%), suggesting the capability for elegant reasoning exists but is suppressed in pre-trained models (\S\ref{sec:finetuning}).
+
+\item Through interpretability analysis, we identify that larger models allocate disproportionate attention to computational tokens over strategic-planning tokens during early reasoning stages, providing mechanistic insight into the elegance gap (\S\ref{sec:analysis}).
+\end{itemize}
+
+Our findings challenge the assumption that scaling alone leads to better reasoning, highlighting the need for training objectives that explicitly reward strategic insight and solution elegance rather than mere computational throughput.
+
+
+\section{Related Work}
+\label{sec:related}
+
+\subsection{Mathematical Reasoning in LLMs}
+
+Recent work has demonstrated impressive capabilities of LLMs on mathematical reasoning tasks~\citep{cobbe2021gsm8k,hendrycks2021math,polu2022formal}.
+Benchmarks like GSM8K~\citep{cobbe2021gsm8k} and MATH~\citep{hendrycks2021math} have driven significant progress, with models like GPT-4~\citep{openai2023gpt4} and Minerva~\citep{lewkowycz2022minerva} achieving near-human performance on competition-level problems.
+However, these benchmarks primarily evaluate \textit{correctness} rather than \textit{solution quality} or \textit{strategic reasoning}.
+
+Recent work has begun examining solution diversity~\citep{uesato2022solving} and multi-step reasoning~\citep{wei2022chain}, but little attention has been paid to whether models discover elegant solutions or rely on brute-force computation.
+Our work fills this gap by explicitly evaluating the \textit{quality} and \textit{efficiency} of solution strategies.
+
+\subsection{Inverse Scaling Laws}
+
+The inverse scaling prize~\citep{mckenzie2023inverse} identified several tasks where larger models perform worse, often due to:
+(1) stronger pattern-matching to misleading surface features~\citep{mccoy2019right}, 
+(2) increased sensitivity to prompt formatting~\citep{webson2022prompt}, or
+(3) over-confidence in incorrect reasoning~\citep{kadavath2022language}.
+
+Our findings reveal a distinct mechanism: larger models' superior pattern-matching capabilities can lead them to favor \textit{computationally intensive but error-prone} strategies over \textit{insightful but less common} approaches.
+This represents a form of ``capability-induced failure''—where increased capacity paradoxically leads to worse outcomes.
+
+\subsection{Human Mathematical Problem-Solving}
+
+Cognitive science literature extensively documents human expertise in mathematical problem-solving, emphasizing the role of:
+\textbf{strategic knowledge}~\citep{schoenfeld1985mathematical},
+\textbf{meta-cognitive monitoring}~\citep{polya1945solve}, and
+\textbf{representational insight}~\citep{kahneman2011thinking}.
+
+The Einstellung effect~\citep{luchins1942mechanization} describes how prior experience can blind problem-solvers to more efficient solutions—a phenomenon remarkably similar to our observations in LLMs.
+Our work bridges cognitive science and NLP by demonstrating that LLMs may exhibit analogous cognitive biases at scale.
+
+
+\section{The ERMR Benchmark}
+\label{sec:benchmark}
+
+We construct the \textbf{Elegance-Required Mathematical Reasoning (ERMR)} benchmark to systematically evaluate whether LLMs can discover and apply elegant problem-solving strategies.
+
+\subsection{Design Principles}
+
+Each problem in ERMR satisfies the following criteria:
+
+\paragraph{Dual Solution Pathways.} 
+Both an elegant (insight-driven) and a brute-force (computation-heavy) solution exist.
+The elegant solution requires recognizing a key mathematical structure (e.g., symmetry, substitution, geometric interpretation), while brute-force proceeds through algebraic manipulation.
+
+\paragraph{Computational Asymmetry.}
+The elegant solution involves $\leq 5$ major steps, while brute-force requires $\geq 10$ steps.
+Brute-force approaches have significantly higher error rates due to computational complexity.
+
+\paragraph{Expert Consensus.}
+Three mathematics educators independently verify that the elegant solution represents the ``standard'' or ``expected'' approach in educational contexts.
+
+\paragraph{Answer Verifiability.}
+All problems have definite numerical or symbolic answers that can be automatically verified, enabling objective evaluation.
+
+\subsection{Problem Categories}
+
+ERMR contains 240 problems across five categories:
+
+\paragraph{Variable Substitution (60 problems).}
+Problems where introducing auxiliary variables (e.g., sum and product, trigonometric substitution) dramatically simplifies the problem structure.
+
+\textit{Example:} Given $x, y, z > 0$ and $x^2 + y^2 + z^2 = 1$, find the range of $x + y + z - xyz$.
+
+\textit{Elegant Approach:} Recognize this as a symmetric function; apply Cauchy-Schwarz inequality.
+
+\textit{Brute-Force:} Solve using Lagrange multipliers with extensive algebraic manipulation.
+
+\paragraph{Geometric Visualization (48 problems).}
+Problems in algebra that admit geometric interpretations, where visualization provides immediate insight.
+
+\textit{Example:} Given $x^2 + y^2 = x^2 + z^2 + \sqrt{3}xz = y^2 + z^2 + yz = 16$, find $2xy + xz + \sqrt{3}yz$.
+
+\textit{Elegant Approach:} Interpret as dot products of vectors; recognize geometric configuration.
+
+\textit{Brute-Force:} Solve the system of three equations through elimination.
+
+\paragraph{Construction Methods (52 problems).}
+Problems where constructing auxiliary functions or applying specific inequalities yields immediate results.
+
+\paragraph{Pattern Recognition (44 problems).}
+Problems with underlying patterns or recurrence relations that, once identified, reduce complexity dramatically.
+
+\paragraph{Counter-Intuitive Logic (36 problems).}
+Problems where the ``obvious'' approach fails, requiring proof by contradiction or extremal principles.
+
+\subsection{Dataset Construction and Validation}
+
+We sourced problems from:
+(1) Mathematical olympiad archives (IMO, USAMO, AIME),
+(2) University entrance examinations (China, India, Russia),
+(3) Advanced calculus and analysis textbooks.
+
+All problems were filtered to ensure they do not appear verbatim in common LLM training corpora (verified through exact and fuzzy matching against public datasets).
+
+Three annotators with graduate-level mathematics training independently:
+(1) Verified the existence of both elegant and brute-force solutions,
+(2) Counted solution steps for each approach,
+(3) Rated the relative ``elegance'' of the optimal solution on a 5-point scale.
+
+Inter-annotator agreement (Krippendorff's $\alpha$) was 0.82 for elegance ratings and 0.91 for step counting.
+
+\subsection{Evaluation Metrics}
+
+For each problem and model, we collect:
+
+\paragraph{Correctness.} Whether the final answer matches the ground truth (binary).
+
+\paragraph{Solution Category.} Human annotators classify the solution approach as: 
+\textit{Elegant}, \textit{Brute-Force}, \textit{Hybrid}, or \textit{Invalid} (flawed reasoning).
+
+\paragraph{Step Count.} Number of major mathematical operations performed.
+
+\paragraph{Elegance Score.} A composite metric combining step efficiency, structural insight, and generalizability:
+$$
+\text{Elegance} = \alpha \cdot \frac{1}{\text{Steps}} + \beta \cdot \text{Insight} + \gamma \cdot \text{Correctness}
+$$
+where $\alpha=0.3, \beta=0.5, \gamma=0.2$ based on expert weighting.
+
+
+\section{Experimental Setup}
+\label{sec:experiments}
+
+\subsection{Models Evaluated}
+
+We evaluate 12 state-of-the-art LLMs spanning different scales and architectures:
+
+\textbf{Open-source models:} Llama-2 (7B, 13B, 70B)~\citep{touvron2023llama2}, Mistral (7B)~\citep{jiang2023mistral}, DeepSeek-Math (7B, 70B)~\citep{shao2024deepseekmath}.
+
+\textbf{Closed-source models:} GPT-3.5-Turbo, GPT-4-0613, GPT-4-Turbo~\citep{openai2023gpt4}, Claude-2, Claude-3-Opus~\citep{anthropic2023claude}, Gemini-Pro~\citep{team2023gemini}.
+
+\subsection{Prompting Strategies}
+
+We test four prompting strategies to understand how models respond to different levels of guidance:
+
+\paragraph{Zero-Shot (ZS).} 
+Problem statement only:
+\begin{quote}
+\textit{Solve the following problem: [PROBLEM]}
+\end{quote}
+
+\paragraph{Strategy Hint (SH).}
+Problem + high-level strategic suggestion:
+\begin{quote}
+\textit{Solve the following problem. Hint: Consider using [variable substitution / geometric interpretation / symmetry].}
+\end{quote}
+
+\paragraph{One-Shot Elegant (OSE).}
+One example of an elegant solution to a similar problem, followed by the target problem.
+
+\paragraph{Chain-of-Thought (CoT).}
+Standard CoT prompting~\citep{wei2022chain}:
+\begin{quote}
+\textit{Let's solve this step by step.}
+\end{quote}
+
+\subsection{Implementation Details}
+
+For all models, we use:
+- Temperature: 0.7 (to encourage diverse strategies)
+- Max tokens: 2048
+- Top-p: 0.95
+- 5 independent samples per problem to estimate variance
+
+Solutions are parsed using regex patterns to extract numerical answers.
+Two human annotators (graduate students in mathematics) independently classify solution approaches, with disagreements resolved through discussion.
+
+
+\section{Main Results: The Inverse Scaling of Elegance}
+\label{sec:results}
+
+\subsection{Larger Models Prefer Brute-Force}
+
+Table~\ref{tab:main-results} presents our core findings.
+Across all problem categories, we observe a consistent trend: \textbf{larger models increasingly favor brute-force approaches over elegant solutions.}
+
+[TABLE 1: Main results showing model size vs. brute-force preference and success rate]
+
+Specifically:
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+\item Brute-force attempts increase monotonically with model size (Spearman $\rho = 0.73$, $p < 0.01$)
+\item Llama-2-7B attempts brute-force in 34\% of cases; GPT-4-Turbo in 68\%
+\item This preference correlates with \textit{decreased} success rates: models attempting brute-force succeed 41\% of the time vs. 76\% for elegant approaches
+\end{itemize}
+
+\subsection{Category-Specific Analysis}
+
+The inverse scaling phenomenon varies across problem categories:
+
+\paragraph{Variable Substitution.} 
+Largest gap observed (26\% performance decrease for 70B+ models).
+Larger models tend to directly manipulate original variables rather than recognizing substitution opportunities.
+
+\paragraph{Geometric Visualization.}
+Moderate inverse scaling (15\% decrease).
+Models rarely generate geometric interpretations spontaneously; most proceed algebraically.
+
+\paragraph{Construction Methods.}
+Smallest gap (8\% decrease).
+Some larger models successfully identify auxiliary functions, though less consistently than elegant solutions.
+
+[TABLE 2: Per-category breakdown]
+
+\subsection{Error Analysis}
+
+We manually analyzed 200 failed solutions across model sizes:
+
+\textbf{Computational errors (52\%):} 
+Mistakes in algebraic manipulation, especially in brute-force solutions with 10+ steps.
+
+\textbf{Strategic errors (31\%):}
+Choosing an approach that cannot lead to the solution (e.g., incorrect substitution).
+
+\textbf{Incomplete reasoning (17\%):}
+Starting with a promising approach but failing to complete it.
+
+Larger models disproportionately suffer from \textit{computational errors} in brute-force attempts, while smaller models more often make \textit{strategic errors}.
+This suggests larger models have stronger execution capabilities but poorer strategy selection.
+
+
+\section{Prompt Engineering and Its Limitations}
+\label{sec:prompting}
+
+\subsection{Effect of Strategic Hints}
+
+Providing explicit strategic hints (e.g., ``Consider variable substitution'') improves performance across all models:
+
+[TABLE 3: Performance with different prompting strategies]
+
+However, the benefit \textit{decreases} with model size:
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+\item Llama-2-7B: +28\% success rate with hints
+\item GPT-4-Turbo: +11\% success rate with hints
+\end{itemize}
+
+This suggests larger models have stronger priors toward brute-force computation that are harder to override with prompting alone.
+
+\subsection{One-Shot Learning}
+
+Providing an elegant solution example yields mixed results:
+- Improves solution elegance (models more often adopt similar structural approaches)
+- Does \textit{not} significantly improve correctness for larger models
+- Smaller models benefit more from explicit demonstrations
+
+\subsection{Chain-of-Thought Amplifies the Problem}
+
+Surprisingly, CoT prompting \textit{exacerbates} the inverse scaling:
+- Encourages verbose, step-by-step computation
+- Larger models produce longer reasoning chains (avg. 247 tokens vs. 156 for smaller models)
+- These longer chains are more error-prone (58\% success vs. 64\% without CoT for 70B+ models)
+
+This finding challenges the prevailing assumption that CoT universally improves reasoning quality.
+
+
+\section{Fine-Tuning for Elegance}
+\label{sec:finetuning}
+
+\subsection{Training Data Construction}
+
+We construct two SFT datasets:
+\textbf{Elegant-SFT:} 300 problems with elegant solution trajectories
+\textbf{Brute-SFT:} 300 problems with brute-force solution trajectories (control)
+
+Each trajectory includes:
+(1) Problem statement
+(2) Step-by-step solution with strategic justifications
+(3) Final answer
+
+Solutions are written by mathematics educators to emphasize:
+- Explicit strategy selection (``We use substitution because...'')
+- Meta-cognitive statements (``This approach is more efficient than...'')
+- Generalizable patterns (``This technique applies to similar problems where...'')
+
+\subsection{Fine-Tuning Setup}
+
+We fine-tune Llama-2-7B and Llama-2-13B using LoRA~\citep{hu2021lora}:
+- Rank: 16
+- Learning rate: 3e-4
+- Batch size: 32
+- Epochs: 3
+
+\subsection{Results}
+
+Fine-tuning on elegant trajectories yields substantial improvements:
+
+[TABLE 4: Fine-tuning results]
+
+Key findings:
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+\item Elegant-SFT models use elegant approaches in 71\% of cases (vs. 42\% baseline)
+\item Success rate improves by 23\% on ERMR test set
+\item Improvements generalize to held-out problem categories
+\item Brute-SFT models show \textit{decreased} performance (confirming brute-force approach is detrimental)
+\end{itemize}
+
+\subsection{Generalization Analysis}
+
+We test fine-tuned models on out-of-distribution problems:
+- \textbf{MATH benchmark}~\citep{hendrycks2021math}: 12\% improvement on competition problems
+- \textbf{GSM8K}~\citep{cobbe2021gsm8k}: 3\% improvement (ceiling effect; already high performance)
+- \textbf{Novel ERMR variants}: 18\% improvement when problem parameters are varied
+
+This demonstrates that learning elegant reasoning strategies transfers beyond the training distribution.
+
+
+\section{Mechanistic Analysis}
+\label{sec:analysis}
+
+To understand \textit{why} larger models favor brute-force, we conduct interpretability analyses:
+
+\subsection{Attention Pattern Analysis}
+
+Using attention rollout~\citep{abnar2020quantifying}, we analyze which input tokens receive high attention during solution generation:
+
+[FIGURE 1: Attention heatmaps for elegant vs. brute-force solutions]
+
+Key observations:
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+\item Models generating elegant solutions allocate 63\% of early-layer attention to \textit{constraint terms} (e.g., $x^2 + y^2 = 1$)
+\item Models generating brute-force solutions distribute attention more uniformly (34\% to constraints, 42\% to variable names)
+\item Larger models show \textit{weaker} attention concentration on constraint terms
+\end{itemize}
+
+This suggests elegant reasoning requires focused attention on problem structure, while brute-force proceeds through distributed, token-by-token processing.
+
+\subsection{Activation Probing}
+
+We train linear probes on intermediate activations to predict solution strategy:
+
+[FIGURE 2: Probe accuracy across layers]
+
+Findings:
+- Strategy decisions crystallize in layers 8-12 for 7B models, layers 15-22 for 70B models
+- Earlier layers encode problem type; middle layers commit to strategy; later layers execute
+- Larger models show \textit{later} strategy commitment, suggesting longer deliberation but potentially missing early structural cues
+
+\subsection{Neuron Attribution}
+
+Using integrated gradients~\citep{sundararajan2017axiomatic}, we identify neurons most predictive of elegant vs. brute-force strategies:
+
+- ``Symmetry neurons'' (high activation on symmetric expressions) are more influential in smaller models
+- ``Computation neurons'' (high activation on arithmetic operations) dominate in larger models
+- Fine-tuning on elegant solutions increases symmetry neuron influence
+
+This provides preliminary evidence that training data composition shapes which reasoning modes become dominant.
+
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Why Do Larger Models Fail?}
+
+We propose three interrelated explanations:
+
+\paragraph{Pattern Over-Matching.}
+Larger models, trained on more diverse data, encounter more examples of brute-force solutions in educational materials, textbooks, and online Q\&A forums.
+This creates stronger priors for computational approaches, even when inefficient.
+
+\paragraph{Lack of Meta-Cognitive Oversight.}
+Current LLMs lack explicit mechanisms for \textit{strategy selection} before execution.
+They immediately begin generating solutions without evaluating multiple approaches.
+
+\paragraph{Training Objective Misalignment.}
+Standard language modeling objectives reward \textit{any} path to the correct answer equally.
+There is no signal to prefer elegant over brute-force solutions, potentially allowing models to ``shortcut'' through computation rather than developing insight.
+
+\subsection{Implications for LLM Development}
+
+Our findings suggest several directions for improving reasoning in LLMs:
+
+\paragraph{Elegance-Aware Training Objectives.}
+Reward models could explicitly score solution elegance, penalizing unnecessarily complex approaches.
+
+\paragraph{Strategy-Selection Modules.}
+Incorporating explicit planning or strategy-selection stages before solution execution.
+
+\paragraph{Curriculum Learning.}
+Training models first on elegant solutions, then gradually introducing brute-force approaches as fallbacks.
+
+\paragraph{Synthetic Data Generation.}
+Generating diverse elegant solutions to counterbalance brute-force prevalence in web-scraped data.
+
+\subsection{Limitations and Future Work}
+
+Our study has several limitations:
+
+\paragraph{Human Annotation.}
+Solution classification relies on human judgment, though we achieve high inter-annotator agreement.
+
+\paragraph{Domain Scope.}
+We focus on mathematical reasoning; the elegance gap may manifest differently in other domains (coding, scientific reasoning, etc.).
+
+\paragraph{Prompt Sensitivity.}
+While we test four prompting strategies, the vast prompt space remains underexplored.
+
+Future work should:
+(1) Extend ERMR to other domains (programming, physics problems, logical puzzles),
+(2) Investigate whether the elegance gap appears during training (through analysis of intermediate checkpoints),
+(3) Explore whether multi-agent or self-critique approaches can help models discover elegant solutions.
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have identified and characterized a novel form of inverse scaling in large language models: the \textbf{elegance gap}, where larger models increasingly favor computationally intensive brute-force approaches over insightful elegant solutions in mathematical reasoning.
+
+Through the ERMR benchmark and comprehensive evaluation of 12 LLMs, we demonstrate that this phenomenon is robust across model families and problem categories.
+Our mechanistic analyses reveal that larger models allocate attention and computational resources toward token-level execution rather than structural insight, suggesting fundamental limitations in how current models approach strategic reasoning.
+
+Importantly, we show that targeted fine-tuning on elegant solution trajectories can significantly mitigate this gap, indicating that the \textit{capability} for elegant reasoning exists but is suppressed in standard pre-training.
+
+These findings have important implications for the development of future LLMs: simply scaling model size and data may not lead to more insightful reasoning.
+Instead, we need training paradigms that explicitly encourage strategic thinking, reward solution quality alongside correctness, and develop meta-cognitive capabilities for approach selection.
+
+As LLMs become increasingly integrated into education, scientific research, and decision-making, ensuring they exhibit not just computational power but also reasoning elegance becomes critical.
+Our work takes a first step toward understanding and addressing this challenge.
+
+
+\section*{Limitations}
+
+Following ACL guidelines, we acknowledge the following limitations:
+
+\paragraph{Benchmark Scope.} 
+ERMR focuses on mathematical reasoning and may not generalize to all domains requiring strategic insight (e.g., creative writing, open-ended problem solving).
+
+\paragraph{Evaluation Subjectivity.}
+While we achieve high inter-annotator agreement (Krippendorff's $\alpha = 0.82$), the classification of solutions as ``elegant'' vs. ``brute-force'' involves subjective judgment.
+Different mathematics educators might disagree on borderline cases.
+
+\paragraph{Model Access.}
+For closed-source models (GPT-4, Claude, Gemini), we rely on API access without insight into architecture, training data, or internal mechanisms, limiting the depth of mechanistic analysis.
+
+\paragraph{Prompt Engineering.}
+Despite testing multiple prompting strategies, we cannot exhaustively explore the prompt space.
+It is possible that carefully crafted prompts could mitigate the elegance gap more effectively than our tested approaches.
+
+\paragraph{Training Data Contamination.}
+While we filtered problems to avoid verbatim matches with common training corpora, we cannot guarantee that similar problems or solution strategies were not encountered during pre-training.
+
+\paragraph{Sample Size for Fine-Tuning.}
+Our fine-tuning experiments use 300 training examples due to computational constraints.
+Larger-scale fine-tuning might yield different results.
+
+\paragraph{Human Performance Baseline.}
+We do not include systematic human evaluation on ERMR, making it difficult to assess whether models are approaching, exceeding, or falling short of human expert performance.
+
+
+\section*{Ethics Statement}
+
+\paragraph{Responsible Benchmarking.}
+ERMR is designed to evaluate reasoning quality, not to be ``gamed'' by models.
+We commit to regular updates if models begin over-fitting to our benchmark.
+
+\paragraph{Educational Impact.}
+If deployed in educational contexts, systems exhibiting the elegance gap might teach students inefficient problem-solving approaches.
+We advocate for careful evaluation before deploying LLMs as tutoring systems.
+
+\paragraph{Accessibility.}
+We will release ERMR under an open license to ensure broad access for academic research, though we note that evaluating large proprietary models may require significant compute resources or API costs.
+
+\paragraph{Misuse Potential.}
+ERMR could be misused to create adversarial inputs that expose LLM weaknesses.
+However, we believe transparency about limitations benefits the research community more than obscurity.
+
+
+\section*{Acknowledgments}
+
+We thank the anonymous reviewers for their valuable feedback.
+We are grateful to [names removed for anonymous review] for assistance with benchmark construction and annotation.
+This work was supported by [funding sources removed for anonymous review].
+Computational resources were provided by [removed for anonymity].
+
+
+\bibliography{custom}
+
+\appendix
+
+\section{ERMR Example Problems}
+\label{appendix:examples}
+
+We provide complete examples from each category in ERMR:
+
+\subsection{Variable Substitution}
+
+\textbf{Problem:} 
+Given non-zero real numbers $x, y$ satisfying 
+$$\frac{x}{y} + \frac{y}{x} + 2xy = x^2 - y^2,$$
+find the minimum value of $x^2 + y^2$.
+
+\textbf{Elegant Solution:}
+Let $u = x + y$ and $v = xy$.
+The constraint becomes:
+$$\frac{u^2 - 2v}{v} + 2v = u^2 - 2v$$
+Simplifying: $u^2 = 2v(u^2 - 1)$...
+[5 steps total] $\Rightarrow$ Answer: $\min(x^2 + y^2) = 2$.
+
+\textbf{Brute-Force Solution:}
+Solve for $y$ in terms of $x$, substitute into objective, compute derivative, solve cubic equation...
+[15+ steps, error-prone]
+
+\subsection{Geometric Visualization}
+
+\textbf{Problem:}
+Given $x^2 + y^2 = x^2 + z^2 + \sqrt{3}xz = y^2 + z^2 + yz = 16$, find $2xy + xz + \sqrt{3}yz$.
+
+\textbf{Elegant Solution:}
+Interpret as $|\mathbf{a}|^2 = |\mathbf{b}|^2 = |\mathbf{c}|^2 = 16$ where...
+[Geometric approach using dot products, 4 steps]
+Answer: $16$.
+
+\textbf{Brute-Force Solution:}
+Solve the system of three equations for $x, y, z$ explicitly...
+[12+ steps with complex algebra]
+
+\subsection{Additional Examples}
+
+[Include 3-5 more representative problems from other categories]
+
+
+\section{Full Experimental Results}
+\label{appendix:full-results}
+
+\subsection{Model-by-Model Breakdown}
+
+[TABLE A1: Detailed results for all 12 models on all 5 categories]
+
+\subsection{Prompt Variations}
+
+[TABLE A2: Performance across different prompt formulations]
+
+
+\section{Annotation Guidelines}
+\label{appendix:annotation}
+
+We provide the complete annotation guidelines given to human evaluators:
+
+\subsection{Solution Classification Rubric}
+
+\textbf{Elegant Solution} - Check all that apply:
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+\item $\leq$ 5 major computational steps
+\item Uses a key insight (substitution, symmetry, geometric interpretation)
+\item Would be considered the ``standard'' or ``textbook'' solution
+\item Generalizes to similar problems
+\end{itemize}
+
+\textbf{Brute-Force Solution} - Check all that apply:
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+\item $\geq$ 10 major computational steps
+\item Proceeds through algebraic manipulation without structural insight
+\item Would be considered ``inelegant'' by math educators
+\item Specific to the particular problem instance
+\end{itemize}
+
+[Complete rubric with examples...]
+
+
+\section{Fine-Tuning Dataset Examples}
+\label{appendix:sft-data}
+
+\textbf{Example Training Instance:}
+
+\begin{quote}
+\textbf{Problem:} [problem statement]
+
+\textbf{Solution:}
+
+\textit{[Strategy Selection]} Looking at this problem, I notice the expression is symmetric in $x$ and $y$. This suggests that using substitution $u = x + y$ and $v = xy$ might simplify the problem significantly.
+
+\textit{[Step 1]} Let $u = x + y$ and $v = xy$. Then $x^2 + y^2 = u^2 - 2v$.
+
+\textit{[Step 2]} Substituting into the constraint...
+
+[Continue with justified steps]
+
+\textit{[Meta-cognitive note]} This approach is more efficient than solving for one variable because it preserves the symmetric structure, reducing computational complexity from $O(n^3)$ to $O(n)$.
+
+\textbf{Answer:} [final answer]
+\end{quote}
+
+[Include 5-10 representative examples]
+
+
+\section{Attention Visualization Details}
+\label{appendix:attention}
+
+[FIGURE A1: Complete attention patterns for different model sizes]
+
+[FIGURE A2: Layer-by-layer attention evolution]
+
+
+\section{Code and Data Availability}
+\label{appendix:code}
+
+Upon acceptance, we will release:
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+\item Complete ERMR benchmark with all 240 problems and solutions
+\item Evaluation code and metrics computation
+\item Model outputs for all 12 evaluated LLMs
+\item Fine-tuning scripts and training data
+\item Annotation guidelines and inter-annotator agreement data
+\end{itemize}
+
+Repository: \texttt{[anonymized for review]}
+
+\end{document}

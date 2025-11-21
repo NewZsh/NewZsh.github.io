@@ -1,0 +1,173 @@
+\begin{thebibliography}{25}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Abnar and Zuidema(2020)}]{abnar2020quantifying}
+Samira Abnar and Willem Zuidema. 2020.
+\newblock Quantifying attention flow in transformers.
+\newblock \emph{Proceedings of the 58th Annual Meeting of the Association for
+  Computational Linguistics}.
+
+\bibitem[{{Anthropic}(2023)}]{anthropic2023claude}
+{Anthropic}. 2023.
+\newblock Claude 2.
+\newblock Available at https://www.anthropic.com.
+
+\bibitem[{Cobbe et~al.(2021)Cobbe, Kosaraju, Bavarian, Chen, Jun, Kaiser,
+  Plappert, Tworek, Hilton, Nakano, Hesse, and Schulman}]{cobbe2021gsm8k}
+Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian, Mark Chen, Heewoo Jun, Lukasz
+  Kaiser, Matthias Plappert, Jerry Tworek, Jacob Hilton, Reiichiro Nakano,
+  Christopher Hesse, and John Schulman. 2021.
+\newblock {GSM8K}: Training verifiers to solve math word problems.
+\newblock In \emph{Advances in Neural Information Processing Systems}.
+
+\bibitem[{{Gemini Team}(2023)}]{team2023gemini}
+{Gemini Team}. 2023.
+\newblock Gemini: A family of highly capable multimodal models.
+\newblock \emph{arXiv preprint arXiv:2312.11805}.
+
+\bibitem[{Hendrycks et~al.(2021)Hendrycks, Burns, Kadavath, Arora, Basart,
+  Tang, Song, and Steinhardt}]{hendrycks2021math}
+Dan Hendrycks, Collin Burns, Saurav Kadavath, Akul Arora, Steven Basart, Eric
+  Tang, Dawn Song, and Jacob Steinhardt. 2021.
+\newblock Measuring mathematical problem solving with the {MATH} dataset.
+\newblock \emph{arXiv preprint arXiv:2103.03874}.
+
+\bibitem[{Hu et~al.(2022)Hu, Shen, Wallis, Allen-Zhu, Li, Wang, Wang, and
+  Chen}]{hu2021lora}
+Edward~J Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean
+  Wang, Lu~Wang, and Weizhu Chen. 2022.
+\newblock {LoRA}: Low-rank adaptation of large language models.
+\newblock \emph{International Conference on Learning Representations}.
+
+\bibitem[{Jiang et~al.(2023)Jiang, Sablayrolles, Mensch, Bamford, Chaplot,
+  Casas, Bressand, Lengyel, Lample, Saulnier et~al.}]{jiang2023mistral}
+Albert~Q Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford,
+  Devendra~Singh Chaplot, Diego de~las Casas, Florian Bressand, Gianna Lengyel,
+  Guillaume Lample, Lucile Saulnier, and 1 others. 2023.
+\newblock Mistral 7b.
+\newblock \emph{arXiv preprint arXiv:2310.06825}.
+
+\bibitem[{Kadavath et~al.(2022)Kadavath, Conerly, Askell, Henighan, Drain,
+  Perez, Schiefer, Hatfield-Dodds, DasSarma, Tran-Johnson
+  et~al.}]{kadavath2022language}
+Saurav Kadavath, Tom Conerly, Amanda Askell, Tom Henighan, Dawn Drain, Ethan
+  Perez, Nicholas Schiefer, Zac Hatfield-Dodds, Nova DasSarma, Eli
+  Tran-Johnson, and 1 others. 2022.
+\newblock Language models (mostly) know what they know.
+\newblock \emph{arXiv preprint arXiv:2207.05221}.
+
+\bibitem[{Kahneman(2011)}]{kahneman2011thinking}
+Daniel Kahneman. 2011.
+\newblock \emph{Thinking, Fast and Slow}.
+\newblock Farrar, Straus and Giroux.
+
+\bibitem[{Lewkowycz et~al.(2022)Lewkowycz, Andreassen, Dohan, Dyer,
+  Michalewski, Ramasesh, Slone, Anil, Schlag, Gutman-Solo
+  et~al.}]{lewkowycz2022minerva}
+Aitor Lewkowycz, Anders Andreassen, David Dohan, Ethan Dyer, Henryk
+  Michalewski, Vinay Ramasesh, Ambrose Slone, Cem Anil, Imanol Schlag, Theo
+  Gutman-Solo, and 1 others. 2022.
+\newblock Solving quantitative reasoning problems with language models.
+\newblock \emph{arXiv preprint arXiv:2206.14858}.
+
+\bibitem[{Lin et~al.(2022)Lin, Hilton, and Evans}]{lin2022truthfulqa}
+Stephanie Lin, Jacob Hilton, and Owain Evans. 2022.
+\newblock {TruthfulQA}: Measuring how models mimic human falsehoods.
+\newblock \emph{Proceedings of the 60th Annual Meeting of the Association for
+  Computational Linguistics}.
+
+\bibitem[{Luchins(1942)}]{luchins1942mechanization}
+Abraham~S Luchins. 1942.
+\newblock Mechanization in problem solving: The effect of einstellung.
+\newblock \emph{Psychological Monographs}, 54(6):1--95.
+
+\bibitem[{McCoy et~al.(2019)McCoy, Pavlick, and Linzen}]{mccoy2019right}
+Tom McCoy, Ellie Pavlick, and Tal Linzen. 2019.
+\newblock Right for the wrong reasons: Diagnosing syntactic heuristics in
+  natural language inference.
+\newblock \emph{Proceedings of the 57th Annual Meeting of the Association for
+  Computational Linguistics}.
+
+\bibitem[{McKenzie et~al.(2023)McKenzie, Lyzhov, Pieler, Parrish, Mueller,
+  Prabhu, McLean, Kirtland, Ross, Liu et~al.}]{mckenzie2023inverse}
+Ian~R McKenzie, Alexander Lyzhov, Michael Pieler, Alicia Parrish, Aaron
+  Mueller, Ameya Prabhu, Euan McLean, Aaron Kirtland, Alexis Ross, Alisa Liu,
+  and 1 others. 2023.
+\newblock Inverse scaling: When bigger isn't better.
+\newblock \emph{arXiv preprint arXiv:2306.09479}.
+
+\bibitem[{{OpenAI}(2023)}]{openai2023gpt4}
+{OpenAI}. 2023.
+\newblock {GPT-4} technical report.
+\newblock \emph{arXiv preprint arXiv:2303.08774}.
+
+\bibitem[{Polu et~al.(2022)Polu, Han, Zheng, Baksys, Babuschkin, and
+  Sutskever}]{polu2022formal}
+Stanislas Polu, Jesse~Michael Han, Kunhao Zheng, Mantas Baksys, Igor
+  Babuschkin, and Ilya Sutskever. 2022.
+\newblock Formal mathematics statement curriculum learning.
+\newblock \emph{arXiv preprint arXiv:2202.01344}.
+
+\bibitem[{P{\'o}lya(1945)}]{polya1945solve}
+George P{\'o}lya. 1945.
+\newblock \emph{How to Solve It: A New Aspect of Mathematical Method}.
+\newblock Princeton University Press.
+
+\bibitem[{Schoenfeld(1985)}]{schoenfeld1985mathematical}
+Alan~H Schoenfeld. 1985.
+\newblock \emph{Mathematical Problem Solving}.
+\newblock Academic Press.
+
+\bibitem[{Shao et~al.(2024)Shao, Wang, Zhu, Xu, Song, Zhang, Li, Wu, and
+  Guo}]{shao2024deepseekmath}
+Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, Mingchuan Zhang,
+  Y.~K. Li, Y.~Wu, and Daya Guo. 2024.
+\newblock {DeepSeekMath}: Pushing the limits of mathematical reasoning in open
+  language models.
+\newblock \emph{arXiv preprint arXiv:2402.03300}.
+
+\bibitem[{Sundararajan et~al.(2017)Sundararajan, Taly, and
+  Yan}]{sundararajan2017axiomatic}
+Mukund Sundararajan, Ankur Taly, and Qiqi Yan. 2017.
+\newblock Axiomatic attribution for deep networks.
+\newblock \emph{International Conference on Machine Learning}, pages
+  3319--3328.
+
+\bibitem[{Touvron et~al.(2023)Touvron, Martin, Stone, Albert, Almahairi,
+  Babaei, Bashlykov, Batra, Bhargava, Bhosale et~al.}]{touvron2023llama2}
+Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine
+  Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale,
+  and 1 others. 2023.
+\newblock {Llama 2}: Open foundation and fine-tuned chat models.
+\newblock \emph{arXiv preprint arXiv:2307.09288}.
+
+\bibitem[{Uesato et~al.(2022)Uesato, Kushman, Kumar, Song, Siegel, Wang,
+  Creswell, Irving, and Higgins}]{uesato2022solving}
+Jonathan Uesato, Nate Kushman, Ramana Kumar, Francis Song, Noah Siegel, Lisa
+  Wang, Antonia Creswell, Geoffrey Irving, and Irina Higgins. 2022.
+\newblock Solving math word problems with process-and outcome-based feedback.
+\newblock \emph{arXiv preprint arXiv:2211.14275}.
+
+\bibitem[{Webson and Pavlick(2022)}]{webson2022prompt}
+Albert Webson and Ellie Pavlick. 2022.
+\newblock Do prompt-based models really understand the meaning of their
+  prompts?
+\newblock \emph{Proceedings of the 2022 Conference of the North American
+  Chapter of the Association for Computational Linguistics}.
+
+\bibitem[{Wei et~al.(2022)Wei, Wang, Schuurmans, Bosma, Ichter, Xia, Chi, Le,
+  and Zhou}]{wei2022chain}
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia,
+  Ed~Chi, Quoc Le, and Denny Zhou. 2022.
+\newblock Chain-of-thought prompting elicits reasoning in large language
+  models.
+\newblock \emph{Advances in Neural Information Processing Systems}.
+
+\bibitem[{Wei et~al.(2023)Wei, Wei, Tay, Tran, Webson, Lu, Chen, Liu, Huang,
+  Zhou, and Ma}]{wei2023inverse-scaling}
+Jerry Wei, Jason Wei, Yi~Tay, Dustin Tran, Albert Webson, Yifeng Lu, Xinyun
+  Chen, Hanxiao Liu, Da~Huang, Denny Zhou, and Tengyu Ma. 2023.
+\newblock Larger language models do in-context learning differently.
+\newblock \emph{arXiv preprint arXiv:2303.03846}.
+
+\end{thebibliography}

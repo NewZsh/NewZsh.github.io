@@ -1,0 +1,48 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Related Work}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Mathematical Reasoning in LLMs}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Inverse Scaling Laws}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Human Mathematical Problem-Solving}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{The ERMR Benchmark}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Design Principles}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Problem Categories}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Dataset Construction and Validation}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.4}{Evaluation Metrics}{section.3}% 10
+\BOOKMARK [1][-]{section.4}{Experimental Setup}{}% 11
+\BOOKMARK [2][-]{subsection.4.1}{Models Evaluated}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.2}{Prompting Strategies}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.3}{Implementation Details}{section.4}% 14
+\BOOKMARK [1][-]{section.5}{Main Results: The Inverse Scaling of Elegance}{}% 15
+\BOOKMARK [2][-]{subsection.5.1}{Larger Models Prefer Brute-Force}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.2}{Category-Specific Analysis}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.3}{Error Analysis}{section.5}% 18
+\BOOKMARK [1][-]{section.6}{Prompt Engineering and Its Limitations}{}% 19
+\BOOKMARK [2][-]{subsection.6.1}{Effect of Strategic Hints}{section.6}% 20
+\BOOKMARK [2][-]{subsection.6.2}{One-Shot Learning}{section.6}% 21
+\BOOKMARK [2][-]{subsection.6.3}{Chain-of-Thought Amplifies the Problem}{section.6}% 22
+\BOOKMARK [1][-]{section.7}{Fine-Tuning for Elegance}{}% 23
+\BOOKMARK [2][-]{subsection.7.1}{Training Data Construction}{section.7}% 24
+\BOOKMARK [2][-]{subsection.7.2}{Fine-Tuning Setup}{section.7}% 25
+\BOOKMARK [2][-]{subsection.7.3}{Results}{section.7}% 26
+\BOOKMARK [2][-]{subsection.7.4}{Generalization Analysis}{section.7}% 27
+\BOOKMARK [1][-]{section.8}{Mechanistic Analysis}{}% 28
+\BOOKMARK [2][-]{subsection.8.1}{Attention Pattern Analysis}{section.8}% 29
+\BOOKMARK [2][-]{subsection.8.2}{Activation Probing}{section.8}% 30
+\BOOKMARK [2][-]{subsection.8.3}{Neuron Attribution}{section.8}% 31
+\BOOKMARK [1][-]{section.9}{Discussion}{}% 32
+\BOOKMARK [2][-]{subsection.9.1}{Why Do Larger Models Fail?}{section.9}% 33
+\BOOKMARK [2][-]{subsection.9.2}{Implications for LLM Development}{section.9}% 34
+\BOOKMARK [2][-]{subsection.9.3}{Limitations and Future Work}{section.9}% 35
+\BOOKMARK [1][-]{section.10}{Conclusion}{}% 36
+\BOOKMARK [1][-]{appendix.A}{ERMR Example Problems}{}% 37
+\BOOKMARK [2][-]{subsection.A.1}{Variable Substitution}{appendix.A}% 38
+\BOOKMARK [2][-]{subsection.A.2}{Geometric Visualization}{appendix.A}% 39
+\BOOKMARK [2][-]{subsection.A.3}{Additional Examples}{appendix.A}% 40
+\BOOKMARK [1][-]{appendix.B}{Full Experimental Results}{}% 41
+\BOOKMARK [2][-]{subsection.B.1}{Model-by-Model Breakdown}{appendix.B}% 42
+\BOOKMARK [2][-]{subsection.B.2}{Prompt Variations}{appendix.B}% 43
+\BOOKMARK [1][-]{appendix.C}{Annotation Guidelines}{}% 44
+\BOOKMARK [2][-]{subsection.C.1}{Solution Classification Rubric}{appendix.C}% 45
+\BOOKMARK [1][-]{appendix.D}{Fine-Tuning Dataset Examples}{}% 46
+\BOOKMARK [1][-]{appendix.E}{Attention Visualization Details}{}% 47
+\BOOKMARK [1][-]{appendix.F}{Code and Data Availability}{}% 48

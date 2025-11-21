@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: acl_latex.aux
+The style file: acl_natbib.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: custom.bib
+Warning--empty journal in anthropic2023claude
+You've used 25 entries,
+            3764 wiz_defined-function locations,
+            849 strings with 11064 characters,
+and the built_in function-call counts, 19853 in all, are:
+= -- 1530
+> -- 1425
+< -- 10
++ -- 593
+- -- 447
+* -- 1350
+:= -- 3097
+add.period$ -- 100
+call.type$ -- 25
+change.case$ -- 272
+chr.to.int$ -- 26
+cite$ -- 26
+duplicate$ -- 1102
+empty$ -- 1175
+format.name$ -- 506
+if$ -- 4132
+int.to.chr$ -- 1
+int.to.str$ -- 6
+missing$ -- 278
+newline$ -- 129
+num.names$ -- 100
+pop$ -- 747
+preamble$ -- 1
+purify$ -- 247
+quote$ -- 0
+skip$ -- 1045
+stack$ -- 0
+substring$ -- 333
+swap$ -- 547
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 216
+warning$ -- 1
+while$ -- 80
+width$ -- 0
+write$ -- 305
+(There was 1 warning)
