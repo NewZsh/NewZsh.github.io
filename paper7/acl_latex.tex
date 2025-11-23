@@ -108,7 +108,7 @@
 \begin{abstract}
 As large language models (LLMs) scale up, they demonstrate remarkable improvements across many reasoning tasks. 
 However, we identify a surprising \textit{inverse scaling} phenomenon in mathematical problem-solving: stronger models increasingly favor computationally intensive brute-force approaches over elegant, insight-driven solutions that human experts prefer.
-We introduce \textbf{ERMR} (Elegance-Required Mathematical Reasoning), a benchmark of 240 problems where optimal solutions require key insights such as symmetry exploitation, geometric visualization, or variable substitution, while brute-force computation leads to either errors or excessive complexity.
+We introduce \textbf{GEM} (General Elegant Mathematics), a benchmark of 240 problems where optimal solutions require key insights such as symmetry exploitation, geometric visualization, or variable substitution, while brute-force computation leads to either errors or excessive complexity.
 Through systematic evaluation of 12 state-of-the-art LLMs ranging from 7B to 405B parameters, we observe that larger models are \textit{more likely} to attempt brute-force solutions (65\% for 405B vs. 34\% for 7B models) and consequently achieve \textit{lower} success rates on problems requiring elegant reasoning.
 Our analysis reveals this ``elegance gap'' stems from models' over-reliance on procedural patterns in training data rather than developing strategic problem-solving capabilities.
 We further demonstrate that targeted fine-tuning on elegant solution trajectories can partially bridge this gap, improving both solution quality and success rates.
@@ -139,7 +139,7 @@ We hypothesize that larger models, trained on massive corpora containing diverse
 To investigate this phenomenon systematically, we make the following contributions:
 
 \begin{itemize}[leftmargin=*, itemsep=0pt]
-\item We introduce \textbf{ERMR}, a carefully curated benchmark of 240 mathematical problems spanning five categories (variable substitution, geometric reasoning, construction methods, pattern recognition, and counter-intuitive logic), where elegant solutions exist but brute-force approaches are significantly more error-prone (\S\ref{sec:benchmark}).
+\item We introduce \textbf{GEM}, a carefully curated benchmark of 240 mathematical problems spanning five categories (variable substitution, geometric reasoning, construction methods, pattern recognition, and counter-intuitive logic), where elegant solutions exist but brute-force approaches are significantly more error-prone (\S\ref{sec:benchmark}).
 
 \item Through comprehensive evaluation of 12 LLMs (7B-405B parameters), we demonstrate clear \textbf{inverse scaling in elegance}: larger models prefer brute-force approaches (Spearman $\rho = 0.73$, $p < 0.01$) and achieve 12-18\% lower success rates on elegance-required problems compared to smaller models given strategic hints (\S\ref{sec:experiments}).
 
@@ -186,14 +186,14 @@ The Einstellung effect~\citep{luchins1942mechanization} describes how prior expe
 Our work bridges cognitive science and NLP by demonstrating that LLMs may exhibit analogous cognitive biases at scale.
 
 
-\section{The ERMR Benchmark}
+\section{The GEM Benchmark}
 \label{sec:benchmark}
 
-We construct the \textbf{Elegance-Required Mathematical Reasoning (ERMR)} benchmark to systematically evaluate whether LLMs can discover and apply elegant problem-solving strategies.
+We construct the \textbf{General Elegant Mathematics (GEM)} benchmark to systematically evaluate whether LLMs can discover and apply elegant problem-solving strategies.
 
 \subsection{Design Principles}
 
-Each problem in ERMR satisfies the following criteria:
+Each problem in GEM satisfies the following criteria:
 
 \paragraph{Dual Solution Pathways.} 
 Both an elegant (insight-driven) and a brute-force (computation-heavy) solution exist.
@@ -211,7 +211,7 @@ All problems have definite numerical or symbolic answers that can be automatical
 
 \subsection{Problem Categories}
 
-ERMR contains 240 problems across five categories:
+GEM contains 240 problems across five categories:
 
 \paragraph{Variable Substitution (60 problems).}
 Problems where introducing auxiliary variables (e.g., sum and product, trigonometric substitution) dramatically simplifies the problem structure.
@@ -444,7 +444,7 @@ Fine-tuning on elegant trajectories yields substantial improvements:
 Key findings:
 \begin{itemize}[leftmargin=*, itemsep=0pt]
 \item Elegant-SFT models use elegant approaches in 71\% of cases (vs. 42\% baseline)
-\item Success rate improves by 23\% on ERMR test set
+\item Success rate improves by 23\% on GEM test set
 \item Improvements generalize to held-out problem categories
 \item Brute-SFT models show \textit{decreased} performance (confirming brute-force approach is detrimental)
 \end{itemize}
@@ -454,7 +454,7 @@ Key findings:
 We test fine-tuned models on out-of-distribution problems:
 - \textbf{MATH benchmark}~\citep{hendrycks2021math}: 12\% improvement on competition problems
 - \textbf{GSM8K}~\citep{cobbe2021gsm8k}: 3\% improvement (ceiling effect; already high performance)
-- \textbf{Novel ERMR variants}: 18\% improvement when problem parameters are varied
+- \textbf{Novel GEM variants}: 18\% improvement when problem parameters are varied
 
 This demonstrates that learning elegant reasoning strategies transfers beyond the training distribution.
 
@@ -550,7 +550,7 @@ We focus on mathematical reasoning; the elegance gap may manifest differently in
 While we test four prompting strategies, the vast prompt space remains underexplored.
 
 Future work should:
-(1) Extend ERMR to other domains (programming, physics problems, logical puzzles),
+(1) Extend GEM to other domains (programming, physics problems, logical puzzles),
 (2) Investigate whether the elegance gap appears during training (through analysis of intermediate checkpoints),
 (3) Explore whether multi-agent or self-critique approaches can help models discover elegant solutions.
 
@@ -560,7 +560,7 @@ Future work should:
 
 We have identified and characterized a novel form of inverse scaling in large language models: the \textbf{elegance gap}, where larger models increasingly favor computationally intensive brute-force approaches over insightful elegant solutions in mathematical reasoning.
 
-Through the ERMR benchmark and comprehensive evaluation of 12 LLMs, we demonstrate that this phenomenon is robust across model families and problem categories.
+Through the GEM benchmark and comprehensive evaluation of 12 LLMs, we demonstrate that this phenomenon is robust across model families and problem categories.
 Our mechanistic analyses reveal that larger models allocate attention and computational resources toward token-level execution rather than structural insight, suggesting fundamental limitations in how current models approach strategic reasoning.
 
 Importantly, we show that targeted fine-tuning on elegant solution trajectories can significantly mitigate this gap, indicating that the \textit{capability} for elegant reasoning exists but is suppressed in standard pre-training.
@@ -577,7 +577,7 @@ Our work takes a first step toward understanding and addressing this challenge.
 Following ACL guidelines, we acknowledge the following limitations:
 
 \paragraph{Benchmark Scope.} 
-ERMR focuses on mathematical reasoning and may not generalize to all domains requiring strategic insight (e.g., creative writing, open-ended problem solving).
+GEM focuses on mathematical reasoning and may not generalize to all domains requiring strategic insight (e.g., creative writing, open-ended problem solving).
 
 \paragraph{Evaluation Subjectivity.}
 While we achieve high inter-annotator agreement (Krippendorff's $\alpha = 0.82$), the classification of solutions as ``elegant'' vs. ``brute-force'' involves subjective judgment.
@@ -598,13 +598,13 @@ Our fine-tuning experiments use 300 training examples due to computational const
 Larger-scale fine-tuning might yield different results.
 
 \paragraph{Human Performance Baseline.}
-We do not include systematic human evaluation on ERMR, making it difficult to assess whether models are approaching, exceeding, or falling short of human expert performance.
+We do not include systematic human evaluation on GEM, making it difficult to assess whether models are approaching, exceeding, or falling short of human expert performance.
 
 
 \section*{Ethics Statement}
 
 \paragraph{Responsible Benchmarking.}
-ERMR is designed to evaluate reasoning quality, not to be ``gamed'' by models.
+GEM is designed to evaluate reasoning quality, not to be ``gamed'' by models.
 We commit to regular updates if models begin over-fitting to our benchmark.
 
 \paragraph{Educational Impact.}
@@ -612,10 +612,10 @@ If deployed in educational contexts, systems exhibiting the elegance gap might t
 We advocate for careful evaluation before deploying LLMs as tutoring systems.
 
 \paragraph{Accessibility.}
-We will release ERMR under an open license to ensure broad access for academic research, though we note that evaluating large proprietary models may require significant compute resources or API costs.
+We will release GEM under an open license to ensure broad access for academic research, though we note that evaluating large proprietary models may require significant compute resources or API costs.
 
 \paragraph{Misuse Potential.}
-ERMR could be misused to create adversarial inputs that expose LLM weaknesses.
+GEM could be misused to create adversarial inputs that expose LLM weaknesses.
 However, we believe transparency about limitations benefits the research community more than obscurity.
 
 
@@ -631,10 +631,10 @@ Computational resources were provided by [removed for anonymity].
 
 \appendix
 
-\section{ERMR Example Problems}
+\section{GEM Example Problems}
 \label{appendix:examples}
 
-We provide complete examples from each category in ERMR:
+We provide complete examples from each category in GEM:
 
 \subsection{Variable Substitution}
 
@@ -750,7 +750,7 @@ We provide the complete annotation guidelines given to human evaluators:
 
 Upon acceptance, we will release:
 \begin{itemize}[leftmargin=*, itemsep=0pt]
-\item Complete ERMR benchmark with all 240 problems and solutions
+\item Complete GEM benchmark with all 240 problems and solutions
 \item Evaluation code and metrics computation
 \item Model outputs for all 12 evaluated LLMs
 \item Fine-tuning scripts and training data
