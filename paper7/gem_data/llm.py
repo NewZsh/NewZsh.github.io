@@ -7,8 +7,6 @@ import os
 import uuid
 import base64
 
-from ..log import logger
-
 cur_dir = os.path.dirname(os.path.abspath(__file__))
 
 app_id = '5387a9082588481f95cf94db9aefa5d9'
@@ -134,7 +132,6 @@ class Model_API():
             token_header = await get_tokens()
         
         if token_header == {}:
-            logger.error("获取token失败！")
             return ""
 
 
@@ -171,12 +168,9 @@ class Model_API():
                         else:
                             token_input = res["data"].get("usage", {}).get("intput", -1)
                             token_output  = res["data"].get("usage", {}).get("output", -1)
-                            logger.info(f"{model} token: input {token_input}, output {token_output}")
                             out = res["data"]['choices'][0]["message"]['content']
-                    else:
-                        logger.error("调用LLM接口出错，状态码：" + str(response.status))
             except Exception as e:
-                logger.error("调用LLM接口出错:" + str(e))
+                pass
 
         return out
 

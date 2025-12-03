@@ -23,6 +23,7 @@ def parse_pdfs(pdf_dir="pdf_raw", output_file="problems.json"):
     #     "answer": "...", # Full solution
     #     "final_answer": "...", # The result
     #     "sol_hint": "..." # Hint/Insight
+    #     "question_img_ggb": "...", # optional, if the problem has a img, draw with geogebra language
     # })
     
     with open(output_file, 'w', encoding='utf-8') as f:
