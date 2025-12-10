@@ -1,33 +1,98 @@
 import json
+import os
+from llm import Model_API, modelConfig
+import asyncio
 
-def solve_questions(input_file="problems.json", output_file="problems_with_llm.json"):
+LLM_MODEL = "doubao1.5"
+
+async def solve_question(question: str, sol_hint: str="") -> str:
     """
-    Uses an LLM to solve questions.
-    Adds 'answer_llm' and 'final_answer_llm' to each problem.
+    用题干本身去请求大模型进行解题
+    Args:
+        question: 题干字符串
+        sol_hint: 解法提示字符串
+    Returns:
+        answer: 解答字符串
     """
-    print(f"Solving questions from {input_file}...")
+    global LLM_MODEL
+
+    model = Model_API()
+
+    if len(sol_hint.strip()) > 0:
+        prompt = f"""请详细解答以下数学问题，给出完整的解题步骤和最终答案：
+题目：{question}
+解法提示：{sol_hint}
+"""
+    else:
+        prompt = f"""请详细解答以下数学问题，给出完整的解题步骤和最终答案：
+题目：{question}
+"""
     
-    try:
-        with open(input_file, 'r', encoding='utf-8') as f:
-            problems = json.load(f)
-    except FileNotFoundError:
-        print(f"File {input_file} not found.")
-        return
+    answer = await model.chat(
+        model = modelConfig[LLM_MODEL],
+        text = prompt,
+        max_token = 10240,
+        returnType = "text",
+        history = []
+    )
+
+    return answer
+
+def solve_questions(
+        input_file: str="problems_amm.json", 
+        output_file: str="problems_amm_llm.json"
+    ):
+    """
+    读取题目文件，使用大模型进行解题，并将结果保存到输出文件中，注意要防止重复解题
+    Args:
+        input_file: 输入题目文件路径
+        {"question": "XXX", "answer": "XXX", "final_answer": "XXX", "hint": "XXX", "img_ggb": "XXX"}
+        output_file: 输出解答文件路径
+    """
+    with open(input_file, 'r', encoding='utf-8') as f:
+        problems = []
+        for line in f:
+            problems.append(json.loads(line.strip()))
+
+    solved_problems = []
+    if os.path.exists(output_file):
+        with open(output_file, 'r', encoding='utf-8') as f:
+            for line in f:
+                p = json.loads(line.strip())
+                solved_problems[p["question"]] = 1
 
     for problem in problems:
-        question = problem.get("question", "")
+        question = problem["question"]
+        if question in solved_problems:
+            print(f"Skipping already solved question: {question}")
+            continue
+
+        answer = asyncio.run(solve_question(question))
         
-        # Placeholder for LLM call
-        # answer_llm = call_llm(question)
-        # final_answer_llm = extract_final_answer(answer_llm)
-        
-        problem["answer_llm"] = "Brute force solution..." # Placeholder
-        problem["final_answer_llm"] = problem.get("final_answer") # Placeholder: assume correct for now
-        
-    with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(problems, f, indent=2, ensure_ascii=False)
-        
-    print(f"Solving completed. Results saved to {output_file}")
+        # check if valid answer
+        if answer:
+            problem["llm_answer"] = answer
+            with open(output_file, 'a', encoding='utf-8') as f:
+                f.write(json.dumps(problem, ensure_ascii=False) + '\n')
+        else:
+            print(f"Failed to get answer for question: {question}")
+
 
 if __name__ == "__main__":
-    solve_questions()
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Solve math problems using LLM.")
+    parser.add_argument("--model", type=str, default="doubao1.5", help="Model name to use.")
+    parser.add_argument("--input_file", type=str, default="pdf_parsed/problems_amm.json", help="Input file with problems.")
+    
+    args = parser.parse_args()
+
+    LLM_MODEL = args.model
+
+    output_file = args.input_file.replace(".json", f"_{args.model}.json")
+
+    cur_dir = os.path.dirname(os.path.abspath(__file__))
+    input_file = os.path.join(cur_dir, args.input_file)
+    output_file = os.path.join(cur_dir, output_file)
+
+    solve_questions(input_file, output_file)

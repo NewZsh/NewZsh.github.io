@@ -16,7 +16,7 @@ user = 'hsf'
 modelConfig = {
     'gpt4':'OPENAI_GPT_4_TURBO',  # OPENAI_GPT_4, OPENAI_GPT_4_TURBO, OPENAI_GPT_4_32K
     'gpt4-32k':'OPENAI_GPT_4_32K',
-    'gpt4-o': 'OPENAI_GPT_4_O_PREVIEW',
+    'gpt4o': 'OPENAI_GPT_4_O_PREVIEW',
     'minimax':'MINIMAX_ABAB55_CHAT',
     'gpt3.5':'OPENAI_GPT_35_16K',
     'embedding':'OPENAI_EMBEDDING_ADA',
@@ -25,7 +25,7 @@ modelConfig = {
     'qwen_plus': 'ALI_QWEN_PLUS_LATEST',
     'moonshot': 'MOONSHOT_V1_8K',
     'deepseek_r1': 'DEEP_SEEK_R1',
-    'doubao': 'VOLC_DOUBAO_1_5_PRO_32K',
+    'doubao1.5': 'VOLC_DOUBAO_1_5_PRO_32K',
 }
 
 accessToken_file = "./accessToken.txt"
@@ -109,27 +109,12 @@ async def get_tokens():
 
 
 class Model_API():
-    def __init__(self, mode = "dev"):
-        self.mode = mode
-        config_filename = "../../all_config.json"
-        config_filename = os.path.join(cur_dir, config_filename)
-
-        configs = json.loads(open(config_filename).read())
-        config = configs[mode]
-    
-        self.llm_chat_url = config["llm_chat_url"]
-        self.vlm_chat_url = config["vlm_chat_url"]
-        
+    llm_chat_url = "https://ai-open.test.seewo.com/api/v1/nlp/chat/completion"
 
     async def chat(self, model, text, max_token, returnType="json", history=[], temperature=1):
         url = self.llm_chat_url
 
-        if model not in modelConfig.values():
-            # 自研LLM
-            url = 'http://10.21.9.201:8827/v1/chat/completions'
-            token_header = {}
-        else:
-            token_header = await get_tokens()
+        token_header = await get_tokens()
         
         if token_header == {}:
             return ""

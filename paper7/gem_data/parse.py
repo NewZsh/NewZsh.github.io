@@ -113,7 +113,7 @@ if __name__ == "__main__":
     pdf_dir = "pdf_raw/amm"
     pdf_dir = os.path.join(cur_dir, pdf_dir)
 
-    output_file = "problems_amm.json"
+    output_file = "pdf_parsed/problems_amm.json"
     output_file = os.path.join(cur_dir, output_file)
 
     parse_pdfs(pdf_dir, output_file)
