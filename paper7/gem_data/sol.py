@@ -38,12 +38,62 @@ async def solve_question(question: str, sol_hint: str="") -> str:
 
     return answer
 
+async def check_answer(problem: dict, llm_answer: str) -> bool:
+    """
+    检查大模型的解答是否正确
+    Args:
+        problem: 包含题目和正确答案的字典
+        llm_answer: 大模型生成的解答字符串
+    Returns:
+        is_correct: 布尔值，表示解答是否正确
+    """
+    global LLM_MODEL
+
+    model = Model_API()
+
+    prompt = f"""请判断以下大模型生成的解答是否正确。题目：{problem['question']}。正确答案：{problem['final_answer']}。大模型解答：{llm_answer}。请仅回答“true”或“false”，表示解答是否正确。"""
+
+    response = await model.chat(
+        model = modelConfig[LLM_MODEL],
+        text = prompt,
+        max_token = 200,
+        returnType = "text",
+        history = []
+    )
+
+    return response.strip().lower() == 'true'
+
+async def check_answer_same(problem: dict, llm_answer: str) -> bool:
+    """
+    检查大模型的解答是否和给出的解答过程采取相同的思路
+    Args:
+        problem: 包含题目和正确答案的字典
+        llm_answer: 大模型生成的解答字符串
+    Returns:
+        is_same: 布尔值，表示解答是否和给出的解答过程采取相同的思路
+    """
+    global LLM_MODEL
+
+    model = Model_API()
+
+    prompt = f"""请判断以下大模型生成的解答是否和给出的解答过程采取相同的思路。题目：{problem['question']}。给出的解答过程：{problem['answer']}。大模型解答：{llm_answer}。请仅回答“true”或“false”，表示解答是否和给出的解答过程采取相同的思路。"""
+
+    response = await model.chat(
+        model = modelConfig[LLM_MODEL],
+        text = prompt,
+        max_token = 200,
+        returnType = "text",
+        history = []
+    )
+
+    return response.strip().lower() == 'true'
+
 def solve_questions(
         input_file: str="problems_amm.json", 
         output_file: str="problems_amm_llm.json"
     ):
     """
-    读取题目文件，使用大模型进行解题，并将结果保存到输出文件中，注意要防止重复解题
+    读取题目文件，使用大模型进行解题，并将结果保存到输出文件中
     Args:
         input_file: 输入题目文件路径
         {"question": "XXX", "answer": "XXX", "final_answer": "XXX", "hint": "XXX", "img_ggb": "XXX"}
@@ -68,10 +118,13 @@ def solve_questions(
             continue
 
         answer = asyncio.run(solve_question(question))
+        answer_is_true = asyncio.run(check_answer(problem, answer))
+        answer_is_same = asyncio.run(check_answer_same(problem, answer))
         
-        # check if valid answer
-        if answer:
+        if answer_is_true and answer_is_same:
             problem["llm_answer"] = answer
+            problem["llm_answer_is_true"] = answer_is_true
+            problem["llm_answer_is_elegant"] = answer_is_same
             with open(output_file, 'a', encoding='utf-8') as f:
                 f.write(json.dumps(problem, ensure_ascii=False) + '\n')
         else:
