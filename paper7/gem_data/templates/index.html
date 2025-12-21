@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select a file to check</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin: 0.5em 0; }
+        a { text-decoration: none; color: #0066cc; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Select a JSON file to review</h1>
+    <p>Please select a file from the list below to start the review process. These are the files from <code>pdf_parsed</code> that are ready for checking.</p>
+    <ul>
+        {% for file in files %}
+            <li><a href="/view/{{ file }}">{{ file }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

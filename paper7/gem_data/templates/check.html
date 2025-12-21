@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Problem</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 20px auto; padding: 0 20px; }
+        h1, h2 { color: #2c3e50; }
+        .container { border: 1px solid #ccc; padding: 20px; margin-bottom: 20px; border-radius: 5px; background-color: #f9f9f9; }
+        .field { margin-bottom: 15px; }
+        .field-label { font-weight: bold; color: #34495e; }
+        .field-content { padding: 10px; border: 1px solid #ddd; border-radius: 4px; background-color: #fff; }
+        form { margin-top: 20px; }
+        label { margin-right: 10px; }
+        input[type="radio"] { margin-right: 5px; }
+        input[type="submit"] { padding: 10px 20px; background-color: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        input[type="submit"]:hover { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+    <h1>Problem Review: {{ filename }} (Item {{ item_index + 1 }} of {{ total_items }})</h1>
+    <form action="/save" method="post">
+        <input type="hidden" name="filename" value="{{ filename }}">
+        <input type="hidden" name="item_index" value="{{ item_index }}">
+        <div class="container">
+            <div class="field">
+                <div class="field-label">Question:</div>
+                <div class="field-content">
+                    {{ item.question | safe }}
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Answer:</div>
+                <div class="field-content">
+                    {{ item.answer | safe }}
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Hint:</div>
+                <div class="field-content">
+                    {{ item.hint | safe }}
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">AI Solution:</div>
+                <div class="field-content">
+                    {{ item.llm_answer | safe }}
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Is AI solution correct?</div>
+                <div class="field-content">
+                    <label><input type="radio" name="correct" value="true" {% if item.llm_answer_is_true %}checked{% endif %} required> Yes</label>
+                    <label><input type="radio" name="correct" value="false" {% if not item.llm_answer_is_true %}checked{% endif %}> No</label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Does the question have an elegant solution?</div>
+                <div class="field-content">
+                    <label><input type="radio" name="have" value="true" {% if item.have_elegant_solution %}checked{% endif %} required> Yes</label>
+                    <label><input type="radio" name="have" value="false" {% if not item.have_elegant_solution %}checked{% endif %}> No</label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Is the reasoning similar (elegant)?</div>
+                <div class="field-content">
+                    <label><input type="radio" name="similar" value="true" {% if item.llm_answer_is_elegant %}checked{% endif %} required> Yes</label>
+                    <label><input type="radio" name="similar" value="false" {% if not item.llm_answer_is_elegant %}checked{% endif %}> No</label>
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="Save and Next">
+    </form>
+</body>
+</html>

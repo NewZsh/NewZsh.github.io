@@ -1,4 +1,5 @@
 import json
+from json.tool import main
 import os
 from llm import Model_API, modelConfig
 import asyncio
@@ -72,14 +73,12 @@ async def check_answer_same(problem: dict, llm_answer: str) -> bool:
     Returns:
         is_same: 布尔值，表示解答是否和给出的解答过程采取相同的思路
     """
-    global LLM_MODEL
-
     model = Model_API()
 
     prompt = f"""请判断以下大模型生成的解答是否和给出的解答过程采取相同的思路。题目：{problem['question']}。给出的解答过程：{problem['answer']}。大模型解答：{llm_answer}。请仅回答“true”或“false”，表示解答是否和给出的解答过程采取相同的思路。"""
 
     response = await model.chat(
-        model = modelConfig[LLM_MODEL],
+        model = modelConfig["gpt4-turbo"],
         text = prompt,
         max_token = 200,
         returnType = "text",
@@ -88,10 +87,22 @@ async def check_answer_same(problem: dict, llm_answer: str) -> bool:
 
     return response.strip().lower() == 'true'
 
-def solve_questions(
-        input_file: str="problems_amm.json", 
-        output_file: str="problems_amm_llm.json"
-    ):
+async def process_problem(problem):
+    question = problem["question"]
+    
+    answer = await solve_question(question)
+    answer_is_true = await check_answer(problem, answer)
+    answer_is_same = await check_answer_same(problem, answer)
+    
+    problem["llm_answer"] = answer
+    problem["llm_answer_is_true"] = answer_is_true
+    problem["llm_answer_is_elegant"] = answer_is_same
+    return problem
+
+async def solve_questions(
+    input_file: str="problems_amm.json", 
+    output_file: str="problems_amm_llm.json"
+):
     """
     读取题目文件，使用大模型进行解题，并将结果保存到输出文件中
     Args:
@@ -104,32 +115,29 @@ def solve_questions(
         for line in f:
             problems.append(json.loads(line.strip()))
 
-    solved_problems = []
+    solved_problems = {}
     if os.path.exists(output_file):
         with open(output_file, 'r', encoding='utf-8') as f:
             for line in f:
                 p = json.loads(line.strip())
                 solved_problems[p["question"]] = 1
-
-    for problem in problems:
-        question = problem["question"]
-        if question in solved_problems:
-            print(f"Skipping already solved question: {question}")
+    
+    tasks = []
+    for p in problems:
+        if p["question"] in solved_problems:
+            print(f"Skipping already solved question: {p['question']}")
             continue
+        tasks.append(
+            process_problem(p)
+        )
+    
+    batch_size = 10
+    for i in range(0, len(tasks), batch_size):
+        problems = await asyncio.gather(*tasks[i:i+batch_size])
 
-        answer = asyncio.run(solve_question(question))
-        answer_is_true = asyncio.run(check_answer(problem, answer))
-        answer_is_same = asyncio.run(check_answer_same(problem, answer))
-        
-        if answer_is_true and answer_is_same:
-            problem["llm_answer"] = answer
-            problem["llm_answer_is_true"] = answer_is_true
-            problem["llm_answer_is_elegant"] = answer_is_same
-            with open(output_file, 'a', encoding='utf-8') as f:
-                f.write(json.dumps(problem, ensure_ascii=False) + '\n')
-        else:
-            print(f"Failed to get answer for question: {question}")
-
+        with open(output_file, 'a', encoding='utf-8') as f:
+            for p in problems:
+                f.write(json.dumps(p, ensure_ascii=False) + '\n')
 
 if __name__ == "__main__":
     import argparse
@@ -148,4 +156,4 @@ if __name__ == "__main__":
     input_file = os.path.join(cur_dir, args.input_file)
     output_file = os.path.join(cur_dir, output_file)
 
-    solve_questions(input_file, output_file)
+    asyncio.run(solve_questions(input_file, output_file))

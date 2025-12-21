@@ -14,9 +14,11 @@ app_secret = 'EnmlEonAux1ky3CpmUsffFPeQcVGyTrL'
 # user = 'liuchengbiao'
 user = 'hsf'
 modelConfig = {
-    'gpt4':'OPENAI_GPT_4_TURBO',  # OPENAI_GPT_4, OPENAI_GPT_4_TURBO, OPENAI_GPT_4_32K
-    'gpt4-32k':'OPENAI_GPT_4_32K',
+    'gpt4': 'OPENAI_GPT_4',
+    'gpt4-turbo': 'OPENAI_GPT_4_TURBO',
+    'gpt4-32k': 'OPENAI_GPT_4_32K',
     'gpt4o': 'OPENAI_GPT_4_O_PREVIEW',
+    'gpt4.1': 'OPENAI_GPT_4_1',
     'minimax':'MINIMAX_ABAB55_CHAT',
     'gpt3.5':'OPENAI_GPT_35_16K',
     'embedding':'OPENAI_EMBEDDING_ADA',
