@@ -144,7 +144,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Solve math problems using LLM.")
     parser.add_argument("--model", type=str, default="doubao1.5", help="Model name to use.")
-    parser.add_argument("--input_file", type=str, default="pdf_parsed/problems_amm.json", help="Input file with problems.")
+    parser.add_argument("--input_file", type=str, default="pdf_parsed/problems_quark.json", help="Input file with problems.")
     
     args = parser.parse_args()
 
