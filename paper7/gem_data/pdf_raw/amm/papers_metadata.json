@@ -1,0 +1,826 @@
+[
+  {
+    "issue": "2019年 1卷 1期",
+    "title": "Advances in the Application of Mathematical Programming in the Optimum Design of Water Networks [数学规划在水网络优化设计中的应用进展]",
+    "abstract": "本文在对数学规划的特点详细分析的基础上，对数学规划在\n水网络的优化设计里面求解方法与使用现状进行了详细的分\n析和讨论，并进一步针对如何对求解模型进行更高层次的算\n法优化，提出了确定性算法、外逼近算法、随..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/201902150003.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2019年 1卷 1期",
+    "title": "Advances in Applied Research of Mathematical Geology and Geological Information in China [中国数学地质与地学信息应用研究进展]",
+    "abstract": "本文通过对数学地质的详细说明、详细分析与查询大量相关\n资料，提出了我国数学地质在地学信息领域的几种应用方式，\n并主要论述数学地质在地学信息领域的地质灾害预测方法和\n对地质信息的评价方式，利用计算机作为辅..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/201902150002.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2019年 1卷 1期",
+    "title": "Advances in the Application of Mathematical Models in the Research of Traditional Chinese Medicine [数学模型在中药研究方面的应用进展]",
+    "abstract": "本文通过收集查阅相关的数据资料，并结合了我国近几年来在中药提取、药动学已经药效学方面的重大研究成果，较为仔细将各种类型数学模型的运作原理和使用方法进行了分析，并对各种数字模型的优点和缺点逐一进行了比..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/201901300001.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2019年 1卷 2期",
+    "title": "Research on Teaching Reform of Financial Mathematics Course in Mathematics and Applied Mathematics [数学与应用数学专业金融数学课程教学改革的研究]",
+    "abstract": "有机结合数学与金融的边缘性学科就是金融数学，而对进入数学的有效改革在教育行业中具有十分积极的意义。本文主要从应用数学专业的进入数学课程着手，对其高效教学改革进行探究和分析，从而为各大高校对进入复合型..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/6701bae3c88a483a83dca664d3ab35d9.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2020年 2卷 1期",
+    "title": "A Note on Convergences of a Sequence of Random Variables [关于随机变量序列收敛性的一个注记]",
+    "abstract": "在这篇注记中，我们将对随机变量序列的收敛性作一点探讨，主要动机是对论文（Convergence rates in the law of large numbers and new kinds of convergence of random variables, Communication in Statistics - Th..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/02f9612bdee047e89f64780d4e553999.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2020年 2卷 1期",
+    "title": "Projections of PM2.5and LSTM Model Construction [PM2.5的预测与LSTM模型构建]",
+    "abstract": "预测空气质量PM2.5势在必行。影响PM2.5指数的因素很多，很多影响因素具有不确定性和非线性特征，因而对PM2.5预测的效率等都存在一定的问题。 为了监测和估算PM2.5浓度，采用的长短时记忆（LSTM）预测模型能有效地预..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/201910010005.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2020年 2卷 1期",
+    "title": "Dynamical Constraints on the Cosmological Parameters [宇宙结构参数的动力学限制]",
+    "abstract": "在宇宙学中，宇宙曲率K和宇宙学常数Λ是两个最重要的参数，其值对宇宙的演化有重大的影响。本文在正能量密度和负初始压力的合理假设下，通过定性分析宇宙尺度因子与参数之间的动态关系，发现宇宙的初始奇点是不可达..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/202005180001.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2021年 3卷 1期",
+    "title": "Asymptotic Behaviors for a Class of BAM Neural Networks with Leakage Delays [一类具有泄漏时滞的BAM神经网络间的渐近接近]",
+    "abstract": "本文研究一类具有泄漏时滞的双向联想记忆（BAM）神经网络的渐近接近问题。首先，通过适当的等价转换，将神经网络系统转换为中立型时滞系统。然后，利用合适的Lyapunov泛函和不等式方法，得到了时变输入系统的任意解..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/34447770cacf47cea53917279f9c665a.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2021年 3卷 1期",
+    "title": "A Note on Twin Prime Numbers [关于孪生素数的一个注记]",
+    "abstract": "在这篇注记中，我们对数列{Sn}进行一些讨论，其中Sn表示第n对孪生素数的和（我们把(3,5)作为第一对孪生素数）。我们将提出几个关于{Sn}的猜想，其中一个为孪生素数猜想的加强形式。",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/de5134899a6747bb9a1cdbeb99813106.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2021年 3卷 1期",
+    "title": "An Approach to Calibrate Basic Reproduction Number Based on Machine Learning and SIR Model [一种基于机器学习和SIR模型的基本再生数标定方法]",
+    "abstract": "基本再生数是判断一种流行病发展趋势的首要指标，对于制定应对疾病的政策具有既根本又直观的参考意义。本文采用SIR模型对流行病进行建模，使用美国COVID-19的数据对SIR模型中的参数进行基于机器学习的反演，并使用反..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/01a7b30a30d5455382d613460bd4da9a.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2022年 4卷 1期",
+    "title": "Analysis of the Application of Mathematical Modeling in High School Mathematics [数学建模在高中数学中的应用例析]",
+    "abstract": "“数学建模”是数学六大核心素养之一，是运用数学知识解决实际问题的具体体现。本文通过举例介绍高中数学中几个重要数学模型（函数、不等式、数列、几何和概率统计模型）在高中数学中的应用。",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/cce9aaeb501c4fce91c31852b11e28fb.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Analysis of the Application of Mathematical Modeli.pdf"
+  },
+  {
+    "issue": "2022年 4卷 1期",
+    "title": "Research on middle school mathematics teaching design based on the concept of \"OBE\" [基于“OBE”理念的中学数学教学设计探究]",
+    "abstract": "基于OBE理念下的中学数学教学是完全“以学生为中心”的学生观，将OBE理念引入到中学数学的教学体系设计与创新实践中，为探索应用OBE理念和中学数学教学模式设计和实践提供了一条新途径。",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/69ac0dcfe8bb4f38b9532b637b5d2f84.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Research on middle school mathematics teaching des.pdf"
+  },
+  {
+    "issue": "2022年 4卷 1期",
+    "title": "Some Solutions of N Element  Linear  Equations [n元线性方程组的若干解法]",
+    "abstract": "讨论n元线性方程组的若干解法，并通过实例来论证。",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/625803b32e9e40099caa8d8c2ac974cf.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2022年 4卷 1期",
+    "title": "The twin primes are infinite(Contradictory Law) [孪生素数无限（反证法）]",
+    "abstract": "本文为了证明孪生素数无限，采用由小到大的 等顺序素数，从它们无限个公倍数两侧的 ，筛留A式所示无限的孪生奇数，既证明了是不小于［5与7］孪生素数唯一无限的来源，也证明了自然数列不会存在“连续无限孪生浑合数..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/cf9fd12a84024b0caa77fac24da896a6.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2022年 4卷 1期",
+    "title": "Analysis of the Method of Constructor to Solve Middle School Mathematics Exam Questions [构造函数法解中学数学试题分析]",
+    "abstract": "构造函数解题是高考数学解题中常用的一种有效方法。在解决某些数学问题时，构造一个适当的函数，把问题转化为研究这个辅助函数性质的思想叫做构造函数思想。函数是数学知识的一个中心和基础，贯穿整个高中数学知识板..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/8af8f324717140e4a0a7fb504aa76f7b.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Analysis of the Method of Constructor to Solve Mid.pdf"
+  },
+  {
+    "issue": "2022年 4卷 1期",
+    "title": "A Preliminary Study on Using “Parabola and Triangle” to Improve Shooting Action [利用“抛物线与三角形”增进投篮动作之初探]",
+    "abstract": "近年，全民健康素养与健康促进成为人们研究的主题之一。篮球运动对健康促进具有积极作用，规范的投篮动作可以促进篮球运动的发展。因此，规范的投篮动作值得深入探究。本研究在篮球轨迹“抛物线”模型的基础上，以数..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/09f18c3b9167458c856a89556c2a5e5c.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2022年 4卷 1期",
+    "title": "Positive solutions to a class of singularelliptic systems [一类奇异椭圆方程组的正解]",
+    "abstract": "本文的主要目的是研究一类带奇异权函数的椭圆方程组。通过运用锥上的不动点指数定理，我们得到了该类椭圆方程组在不同参数区间内正径向解存在性、多重性和不存在性的新结果。",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/1ac2a878312b4e3c9aef5d55b9546046.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2023年 5卷 1期",
+    "title": "Shape characteristics and application prospects of a new heteromorphic superelliptic equation [一种新的异形超椭圆方程、形状特征及其应用前景]",
+    "abstract": "异形超椭圆是一种只有单对称轴的平面闭合曲线，该形状普遍存在于自然界和工程设计中，具有重要学术研究意义。基于宽阔河流平面二维变系数对流扩散物质的等浓度线方程和镜面成像原理，定义了包含半长度（半高度）、半..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/1d585727171142d38c4702f766bde497.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2023年 5卷 1期",
+    "title": "Chaotic precipitation series prediction based on VMD and SVR [基于变分模态分解和支持向量回归的混沌降水量序列预测]",
+    "abstract": "准确的降水量预测对暴雨以及洪涝灾害的防治具有重要意义。由于传统降水量预测方法对信息挖掘能力不足，在变分模态分解（VMD）基础上结合机器学习提出一种改进的变分模态分解和支持向量回归（VMD-SVR）预测方法。以郑..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/c01d17f955c24b51a0c0fea225685207.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2023年 5卷 1期",
+    "title": "The solution of the indefinite integrals ∫ secmxtannxdx( m,n ∈ N) [不定积分 ∫ secmxtannxdx( m,n ∈ N)的求解]",
+    "abstract": "由于m，n的奇偶性不同，∫ secm xtann xdx ( m,n ∈ N) 求解方法也不相同，本文利用基本公式法，换元积分法，分部积分法，以及递推公式法讨论了此积分。",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/aca6b340a9b34871886de404b7f2a63b.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2023年 5卷 1期",
+    "title": "The application of function parity in college entrance examination [高考中函数奇偶性的应用]",
+    "abstract": "函数奇偶性是函数的一种重要的性质，近年来，它已经成为高考中的必考知识点。利用函数的这一特殊性质，可以将“数”和“形”进行串联，可以使函数问题化繁为简，这不仅可以锻炼学生的思维能力，还能提升他们的数学核..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/2d4241c46ce748778a9cfa5a938b5918.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\The application of function parity in college entr.pdf"
+  },
+  {
+    "issue": "2023年 5卷 1期",
+    "title": "An analysis on the Construction of college Mathematics Teaching Modebased on mathematical ability Cultivation [基于数学能力培养的高校数学教学模式构建分析]",
+    "abstract": "随着我国经济水平的持续提升，高校教学改革也正在积极进行中，数学作为高校教学工作中的一项基础性学科，在具体从事教学活动的过程中，需要从实际出发，综合加强对该学科特点的分析和研究，在此基础上根据现阶段数学..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/942d0e8a60b34e2da97ba0970b16fd97.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2023年 5卷 1期",
+    "title": "The practice and exploration of mathematical experiment in mathematics teaching in collegesand universities [数学实验在高校数学教学中的实践与探索]",
+    "abstract": "数学是学生在学习过程中必不可少的一门重点学科，因为其具有一定的抽象性、以及内容的复杂性，在高校开展的课程教学中，都被放到了重要位置。在进行现代化教学改革时，学生在学习数学方面，已经不仅仅是局限在学习数..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/efd53b7fbdcf4f89a4621ab862c5f8bb.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2023年 5卷 1期",
+    "title": "Stochastic and convergence rate estimation at Zolotarev distance and its application to limit theory [Zolotarev 距离下随机和收敛速率估计及其极限理论应用]",
+    "abstract": "随机和及其极限理论近几年在保险学、可靠性理论和金融应用中起到了十分重要的地位，因而对随机和在大数律下收敛速率的研究也十分关键。本文利用一种新的度量Zolotarev距离，研究随机和分布在Zolotarev距离上的收敛速..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/51cac462f1564f11a605eb7373570e84.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2023年 5卷 2期",
+    "title": "Prediction analysis of infectious diseases based on SEAIRD-LSTM hybrid prediction model [基于SEAIRD-LSTM混合模型对传染病的预测分析]",
+    "abstract": "在各类传染病交替爆发的背景下，利用深度学习和统计相关理论对传染病的传播机制和流行趋势进行研究和探索是非常重要的. 首先，文章通过对SEAIRD模型与LSTM模型的预测结果进行线性回归，提出SEAIRD-LSTM混合预测模型...",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/57d00eafa2024476b31adb710efe05e9.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2023年 5卷 2期",
+    "title": "The exploration of problems about definite value in conic sections [关于圆锥曲线中定值问题的设法探究]",
+    "abstract": "在平面解析几何中，定值问题一向是圆锥曲线问题中的重难点之一，经常出现在历年的高考卷中，学生在面临此类问题时，往往会遇到不知如何下手以及不知该如何套用韦达定理等问题，本文针对这些问题总结了两个具体的解题..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/4b5342436cd944dfb7cd5b24884a549e.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\The exploration of problems about definite value i.pdf"
+  },
+  {
+    "issue": "2023年 5卷 2期",
+    "title": "The method of solving general term formula of sequences [数列通项公式的求解方法]",
+    "abstract": "数列是高中数学的重要知识内容，已知递推关系求解数列通项公式是学习数列的一个重点和难点，也是考试中的一个必考点.该类题目形式灵活多变、技巧性强.本文通过对近几年高考以及各地模拟考试题的分析，整理归纳出求解..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/686f0d4b244340ac8dca9068568e14a4.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\The method of solving general term formula of sequ.pdf"
+  },
+  {
+    "issue": "2023年 5卷 2期",
+    "title": "Deep thinking and practice of the hierarchical teaching of undergraduate higher mathematics [本科高等数学分层次教学的深入思考与实践]",
+    "abstract": "随着知识经济时代的来临，国际及国内社会之间的竞争最终都可归结为人才的竞争，高校作为重要的人才培养基地，承担着为社会输出高素质复合型人才的艰巨任务，以满足社会发展和国际竞争的需要。高等数学是一门应用性较..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/daec7a73a471484b956ee764040d8554.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2023年 5卷 2期",
+    "title": "Methods of finding the range of parameters in the problem of constant establishment of parametric inequality by derivative [利用导数求含参不等式恒成立问题中参数取值范围的方法]",
+    "abstract": "导数是高中数学的重要内容，它的应用广泛，能够解决许多函数问题，在高考数学中也常常作为压轴题出现，其中求含参不等式恒成立问题中的参数取值范围是它的热门题型之一，这类题一般难度偏大，涉及的知识点全面、复杂..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/024e430d63e84cd98b98649f0cd21164.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Methods of finding the range of parameters in the .pdf"
+  },
+  {
+    "issue": "2023年 5卷 3期",
+    "title": "The application of Expansion and contraction method in college entrance examination [巧用放缩，解高考题]",
+    "abstract": "放缩法是高中数学中重要而又较难的一种方法，在高考导数压轴题中经常遇到，尤其是与不等式相结合的综合类题目，恰当的放缩会给解题带来意想不到的惊喜，同时放缩也是一种重要的数学思想。新高考重视数学核心素养的考..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/28e5164aee1a48068a9ffa0b5ee5db4b.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\The application of Expansion and contraction metho.pdf"
+  },
+  {
+    "issue": "2023年 5卷 3期",
+    "title": "On the cultivation of creative thinking skills and practical ability in mathematics teachingin colleges and universities [谈高校数学教学中创造性思维能力和实践能力的培养]",
+    "abstract": "数学教学过程中，教师往往关注更多的是学生们数学思维能力的培养，而忽视了学生们数学创造性思维能力的培养，极少有机会让学生们在实践中去感知数学的魅力。对于数学来说，创造思维同样是一种非常重要的思维形式，对..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/52ce011ed0f84987ba2c428337742b0e.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2023年 5卷 3期",
+    "title": "Clever use of models to solve math problems in the middle school exam [巧用模型解中考数学题例析]",
+    "abstract": "数学模型是学生解题思维的起点，培养学生的模型思想有助于拓宽思维，提高分析、解决问题的能力。熟悉并掌握模型的应用，能够帮助学生直击问题的关键，跨越解题障碍，缩短解题时间。通过几个典型数学模型及例题解析，..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/bba5dbe71f774fb59d4c6446388713b6.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Clever use of models to solve math problems in the.pdf"
+  },
+  {
+    "issue": "2023年 5卷 3期",
+    "title": "First order logical language independence proof [一阶逻辑语言独立性证明]",
+    "abstract": "独立性是公理系统的重要性质之一。本文给出一阶逻辑的一个公理系统独立性的证明，其中大量运用了归纳原理和字符串规则，归纳原理包括数学归纳法和逻辑语言归纳原理等，字符串规则包括自由出现定义，替换定义以及无冲..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/438b3d02f7f749e78bec4f76a4ad4a51.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2023年 5卷 3期",
+    "title": "Skillfully use the construction methods to solve algebraic problems [巧用构造法妙解代数题例析]",
+    "abstract": "代数作为数学的一个专有名词，在中学数学中占有极其重要的地位，也是中学数学学习的主要部分，该类题目抽象繁琐，灵活多变，知识点环环相扣。本文从代数角度出发，通过分析近年中高考和初高中数学竞赛以及各地模拟试..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/6fa2b0e7a3b246bb872010ef91047724.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Skillfully use the construction methods to solve a.pdf"
+  },
+  {
+    "issue": "2023年 5卷 3期",
+    "title": "Analysis on the law of solving conic curve problem in college entrance examination mathematics paper [高考数学试卷圆锥曲线题解法例析]",
+    "abstract": "圆锥曲线是平面解析几何的主要知识，也是高考数学中的一个重要的考点之一。圆锥曲线题型复杂，解题过程繁琐，从近几年各地区的高考题来看，圆锥曲线类题目难度位于中等到高难度之间，具有较强的综合性，学生稍有不慎..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/da45cd8e726040d3932b2308199f9041.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Analysis on the law of solving conic curve problem.pdf"
+  },
+  {
+    "issue": "2023年 5卷 4期",
+    "title": "Using rotation transformation to solve junior high school geometry problems [利用旋转变换求解初中几何问题]",
+    "abstract": "我们把在平面内将一个图形绕一个定点按一定方向旋转一定角度的几何变换定义为旋转变换，由于旋转前、后的图形全等，因此旋转变换是我们在解决初中几何问题时可以考虑的一种重要手段.在初中几何中，旋转变换类题目灵..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/57bacd70cb25446fb632e47e85688eb9.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Using rotation transformation to solve junior high.pdf"
+  },
+  {
+    "issue": "2023年 5卷 4期",
+    "title": "Denoising of two-dimensional fractional Fourier transform images based on windowing [基于加窗的二维分数阶傅里叶变换图像去噪]",
+    "abstract": "针对图像处理技术在滤波过程中对图像造成的细节和边缘的信息损失，提出一种基于加窗的二维分数阶傅里叶变换的图像去噪方法。首先，运用窗函数对图像的纹理细节和边缘进行保护；其次，通过二维分数阶傅里叶变换将加窗..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/ac224c096eea40918248e53762f97b27.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2023年 5卷 4期",
+    "title": "Research on Online and offline mixed teaching of college mathematics courses [大学数学课程的线上线下混合式教学研究]",
+    "abstract": "随着教育的发展，科学技术的不断进步，当前信息技术逐渐地应用在教育领域，推动着教育的发展，教学方式也变得更加多元化。在当前高校教学中，线上教学与线下教学的混合式教学已经成为高校教育发展的重要方向，通过线..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/8119ae4292054bc5922f816455582ad8.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2023年 5卷 4期",
+    "title": "Research and practice of university mathematics teaching reform from the perspectiveof new engineering [新工科视域下大学数学教学改革研究与实践]",
+    "abstract": "大学数学在工科院校学生发展过程中至关重要，可以有效提高学生的创新素养。新工科的发展，对于大学数学教学的开展有了新的标准。需要大学数学教师明确新工科对于数学教学产生的影响以及数学教学过程中导致问题出现的..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/8244cec39bcf44dca0c0805e15321d3b.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2023年 5卷 4期",
+    "title": "Construction of university mathematics ecological classroom under the background of \"Internet +\" [“互联网+”背景下大学数学生态课堂的构建]",
+    "abstract": "科学信息技术的飞速发展推动了教育事业的进步。数学学习是培养学生逻辑思维能力的主要途径，又与多门学科关系密切，具有显著的综合性特征。对于数学学科而言，二者的结合可以产生新的教学生态，同时也存在一些非生态..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/a6b1f43389bd4e01a8cb7c897a477fbb.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2023年 5卷 4期",
+    "title": "Construction and practice of university mathematics first-class curriculum [大学数学一流课程建设与实践]",
+    "abstract": "在大学人才培育的流程当中，课程属于必不可少的要素，而数学类课程更是属于大学生学习的关键课程，对大学生以后的工作与发展具有重要的影响意义，并且受众范围相对比较广泛，对此，做好对大学数学一流课程的构建，可..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/df37015e955e46139ba5cb3a38d7238d.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2023年 5卷 4期",
+    "title": "Analysis of probability and statistics questions in college entrance examination based on situationperspective——Take the 2023 college entrance examination mathematics as an example [基于情境视角的高考概率统计试题分析——以2023年高考数学为例]",
+    "abstract": "情境作为体现数学核心素养的四大方面之一，也是学业质量水平和核心素养的考察载体。同时，概率与统计是高中数学课程内容的主线之一。本文以2023年全国数学甲卷（理）、全国数学乙卷（理）、新高考I卷、新高考II卷等..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/ec74e886e4ce492a9a7ab1b5ff1fbd46.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Analysis of probability and statistics questions i.pdf"
+  },
+  {
+    "issue": "2023年 5卷 4期",
+    "title": "An example analysis of solving the mathematical problems of college entrance examination using thecombination of number and form strategies [运用数形结合策略解高考数学题例析]",
+    "abstract": "数形结合策略作为一种综合运用数学和几何图形的解题方法，具有很强的实用性和灵活性，在高中数学中较为重要，它能够将数与形很好的结合在一起。因此，学生在学习的过程中熟练地利用数形结合策略不仅能够帮助学生更好..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/4b97abc23a904885a1ef97d7dd54e894.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\An example analysis of solving the mathematical pr.pdf"
+  },
+  {
+    "issue": "2023年 5卷 4期",
+    "title": "Use rotation skillfully to reduce the elements [巧用旋转，化归元素]",
+    "abstract": "近年来，图形的旋转变换已成为中考试题的热点之一，几何问题题目中虽没有“旋转”二字，解题思路常需要构造旋转化归元素，即将元素集中或分散，从而巧妙解决较难的几何问题，考验学生的几何直观和空间想象能力。应用..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/44e20f68642240ab9fee2d22a6ae7de7.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Use rotation skillfully to reduce the elements [巧用.pdf"
+  },
+  {
+    "issue": "2023年 5卷 4期",
+    "title": "The application and promotion of ptolemy's theorem and inequalitiesin maximum-minimum value problems [托勒密定理及不等式在最值问题中的应用与推广]",
+    "abstract": "托勒密定理及托勒密不等式是平面几何中的重要定理及推论。运用托勒密定理及托勒密不等式不仅对解决平面圆内接四边形问题具有重要作用，还给出解决代数中某类最值问题的通用解法，这一解法拓展了代数问题几何化的解题..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/bab7a5e9c48944b693f687e8b6cd4a76.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 1期",
+    "title": "An exploration of generalised functional analysis and its application to optimisation problems [泛函分析及其在优化问题中的应用探索]",
+    "abstract": "泛函分析作为现代数学的重要分支，其基本原理在优化问题中发挥着日益重要的作用。优化问题广泛存在于各个领域，如机器学习、信号处理、图像处理等，而泛函分析为这些问题的解决提供了有力的数学工具。通过深入研究泛..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/e166ec8ca55b44998c111da163ad07f8.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 1期",
+    "title": "Bayesian methods in statistics: application of Bayesian inference in data mining [统计学中的贝叶斯方法：贝叶斯推断在数据挖掘中的应用]",
+    "abstract": "贝叶斯方法在数据挖掘领域发挥着关键作用，它通过构建概率模型来揭示数据背后的潜在规律和模式。在文本分类、关联规则挖掘以及异常检测与预测等方面，贝叶斯方法具有显著优势。作为一种基于概率论的统计推断方法，贝..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/a5379c5ed0cc4115a0d579860587d85c.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 1期",
+    "title": "A review of the development and advanced research of group theory [群论的发展与前沿研究综述]",
+    "abstract": "群论作为数学领域的一个重要分支，其历史脉络、发展轨迹与前沿探索一直是数学界关注的焦点。自群论诞生以来，它经历了从基础理论的构建到现代数学中的广泛应用，再到前沿领域的深入探索的历程。在这个过程中，群论不..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/b03d7725bb4a48c9ac65e008f7d206ed.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 1期",
+    "title": "A zero-knowledge proof protocol based on discrete logarithm problem [一种基于离散对数问题的零知识证明协议]",
+    "abstract": "本文参考前人对于零知识证明问题相关研究，得出了若干设计协议的结论和方式。在此基础上，以降低零知识证明协议的欺骗概率为目标，使用离散对数问题作为数学支撑，结合分割选择技术作为基础进行设计。在最终验证环节..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/45dc4507d537426095a99bae40778a5f.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 1期",
+    "title": "Skillfully use \"proportional line segment\" to solve the combination of number and shape problem —— a deep analysis of the middle school exam filling in the blanks [巧用“成比例线段”解决数形结合题——一道中考填空压轴题的深度剖析]",
+    "abstract": "比例线段是《义务教育数学课程标准（2022年版）》几何模块中的重要组成部分，本文是对2023年无锡中考填空第18题的深度剖析。该题是一个二次函数的几何综合题，考查了学生对数形结合的理解和运用能力。本题共有六种情..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/b46c6ef5ac434576a352a89469898564.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Skillfully use proportional line segment to solv.pdf"
+  },
+  {
+    "issue": "2024年 6卷 1期",
+    "title": "The application of matrices in mathematical modeling [矩阵在数学建模中的运用]",
+    "abstract": "矩阵是高等代数中的一个重要概念，也是数学建模中广泛应用的工具。在各个领域中，矩阵都得到了较好的适用性，可以解决大部分问题。然而，尽管矩阵在数学建模中具有广泛应用，但是这方面的研究并没有一个系统的归纳与..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/0e5d61689f5649ce90130f0299d97ed5.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 1期",
+    "title": "Discuss the strategy of solving similar triangles from a mock test question for the high school entrance examination [从一道中考模拟试题谈相似三角形的解题策略]",
+    "abstract": "我们将对应角相等、对应边成比例的两个图形称为相似图形。图形的相似是初中数学平面几何中极为重要的一个内容，是中考数学中的重点考察内容。相似三角形的知识有两个方面，一是源自相似三角形自身，二是与全等图形、..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/1f4ac60b67304c30b987f11b04809a84.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Discuss the strategy of solving similar triangles .pdf"
+  },
+  {
+    "issue": "2024年 6卷 1期",
+    "title": "A discussion on the inspiration of IMM theoretical framework for mathematical modeling teachingin China - a case study of Su Jiao Edition [刍议IMM理论框架对国内数学建模教学的启发——以苏教版为例]",
+    "abstract": "数学建模是六大核心素养之一，数学建模活动需要学生六大核心素养的综合参与，它培养和提高着学生的综合素质。然而国内大部分的高中数学建模教学还处在一个摸着石头过河的阶段。Interdisciplinary Mathematical Model..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/bdab1b982786491298f6d358fea6c774.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\A discussion on the inspiration of IMM theoretical.pdf"
+  },
+  {
+    "issue": "2024年 6卷 1期",
+    "title": "Graphs help solve abstract function problems--Take the answers to two multiple-choice questions in the college entrance examination as an example [图形助力抽象函数问题求解——以两道高考选择题解答为例]",
+    "abstract": "本文的目的是针对几道抽象函数选择题压轴题，利用数形结合的思想指导学生化简求解过程，提高选择题的解题效率。主要使用的是案例分析法，抓住共通点进行求解过程的简化。本文的结果是得到了化简求解过程的“三步骤”..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/e11a657f00ec42c68c511598e64481b7.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Graphs help solve abstract function problems--Take.pdf"
+  },
+  {
+    "issue": "2024年 6卷 2期",
+    "title": "Reform and practice of university mathematics teaching based on OBE concept [基于OBE理念的高校大学数学教学改革和实践]",
+    "abstract": "新课程改革背景下，国家教育部门对高校教学提出新要求。大学数学是高校学生的公共基础课程之一，传统的课程教学模式已经无法满足学生的学习需要，将OBE理念融入高校大学数学教学中，可以有效激发学生学习兴趣，提高..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/193cf500aa954ead8d139479c3a44bb6.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 2期",
+    "title": "Statistics and analysis of plane analysis geometry questions of college entrance examination in recent five years [近五年高考平面解析几何试题的统计与分析]",
+    "abstract": "本文通过定性和定量研究方法，分析了2019-2023年全国高考平面解析几何试题的特点。研究发现，高考改革后，平面解析几何题目的数量增加，难度上升，且更加强调数学核心素养和逻辑推理能力。文章提出，教学应创设丰富..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/bed1c821394d4c3cb51964cc1309da8a.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Statistics and analysis of plane analysis geometry.pdf"
+  },
+  {
+    "issue": "2024年 6卷 2期",
+    "title": "Random P bifurcation of vehicle rolling motion system under color noise excitation [色噪声激励下飞行器滚转运动系统的随机P分岔]",
+    "abstract": "滚转运动在飞行器的横向稳定性中起着关键作用。为了研究随机激励下三角翼飞行器滚转运动的动力学行为，本文在滚转运动模型中引入色噪声激励。首先借助幅值包络随机平均法计算得出FPK方程和振幅响应的平稳概率密度函..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/891d2ee2f2544ce180b7146f0395b249.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 2期",
+    "title": "Exploration on the innovative application of life education concept in high school mathematics teaching [高中数学教学中生活教育理念的创新应用探索]",
+    "abstract": "近年来，高中数学教学中对生活教育理念的应用逐渐加强，该理念在教学实践中发挥着至关重要的指导作用和不可或缺的影响。通过将生活教育理念有机融入高中数学教学中，我们旨在帮助学生学会在具体情境中解决实际问题，..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/a6f35dcaa88142ea8d12fdcffd3752d5.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Exploration on the innovative application of life .pdf"
+  },
+  {
+    "issue": "2024年 6卷 2期",
+    "title": "Research on the implementation strategy of large unit teaching in high school mathematicsunder the background of \"Three New Things\" [“三新”背景下高中数学大单元教学实施策略研究]",
+    "abstract": "在“三新”背景下，如何提高学生多种能力、提升学习效果，成为广大一线教师密切关注的话题。大单元教学以大主题、大任务为中心，将复杂、分散的知识点整合起来，帮助学生理解新知识。高中数学逻辑性较强，对学生的理..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/1f3e08ce29564d6ca69a5e920d30e945.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Research on the implementation strategy of large u.pdf"
+  },
+  {
+    "issue": "2024年 6卷 2期",
+    "title": "Solving strategy of trigonometric function evaluation problem with circle as background——Exploration and reflection on the solution of a multiple choice question in a senior high school examination [以圆为背景下三角函数求值问题的解题策略——一道中考选择题的解法探究及反思]",
+    "abstract": "三角形和圆是初中数学最重要的两个几何图形，也是学生学习的重难点，尤其将两者结合起来考察，对学生相关知识点的掌握有很高的要求。本文以一道江苏中考选择题为例，探究以圆为背景来求三角函数值的解题策略，从不同..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/5ba8ffd0254e476c87e962711538b25f.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Solving strategy of trigonometric function evaluat.pdf"
+  },
+  {
+    "issue": "2024年 6卷 2期",
+    "title": "Statistics and analysis of trigonometric function questions of college entrance examination in recent 5 years -- taking 2019-2020 National Test paper and 2021-2023 New high test paper as examples [近5年高考三角函数试题的统计与分析——以2019-2020年全国卷和2021-2023年新高考卷为例]",
+    "abstract": "以2019-2020年全国卷和2021-2023年新高考I卷为研究对象，从知识点、数学核心素养、综合难度三个维度对近五年高考卷三角函数试题进行统计与分析，由于侧重点不同，在分析对比时，将三角函数试题分为非解答题和解答题..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/1fa90c72222344ac8e5012a545a1ea2e.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Statistics and analysis of trigonometric function .pdf"
+  },
+  {
+    "issue": "2024年 6卷 2期",
+    "title": "Analysis of function questions in yangzhou middle school entrance examination in the past five years [近五年扬州中考函数试题分析]",
+    "abstract": "本文以近五年扬州市中考函数试题为研究对象，分析了试题的情境分类、知识考查、数学核心素养以及综合难度。分析结果显示，试题涵盖了多种情境，既包括数学情境也包括生活情境，其中一次函数和反比例函数是主要考点，..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/99e2bf08cce24931be5a7a0c168238e1.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Analysis of function questions in yangzhou middle .pdf"
+  },
+  {
+    "issue": "2024年 6卷 2期",
+    "title": "The application of the plane vector iso-sum line theorem in triangles [平面向量等和线定理在三角形中的应用]",
+    "abstract": "平面向量是解决数学问题的重要工具，其中三点共线定理是平面向量模块的重要知识点。平面向量等和线定理作为平面向量三点共线定理的拓展，在解决向量线性表示中的系数和相关问题时具有简洁性。本文将从平面向量三点共..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/4b086d1bee5443c78c4e0c5cb87c1a81.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 2期",
+    "title": "Research on time series analysis of NYSE stock prices [基于NYSE股票价格的时间序列分析研究]",
+    "abstract": "随着如今金融市场的不断发展，股票价格变动成为人们关注的焦点。股票价格不仅反映了公司的经营状况和市场价值，还受到宏观经济、政策调整、等多种因素的影响。因此，如何对股票价格进行准确地分析和预测，对于指导投..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/653efd837485417b9bb052fbc5d68acc.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 3期",
+    "title": "Exploration of artificial intelligence in personalized education of university mathematics [人工智能在大学数学个性化教育中的探索]",
+    "abstract": "将人工智能技术应用到大学数学个性化教育中，能够满足不同大学生学习需要，使大学生主动参与到大学数学学习中，成为社会发展需要的高质量人才。本篇文章简要介绍了人工智能技术在大学数学个性化教育中的应用，并探究..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/565363ebd74e447096442c5764680111.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 3期",
+    "title": "Research on the cultivation of problem-solving ability in middle school mathematics education [中学数学教育中的问题解决能力培养探究]",
+    "abstract": "中学数学教育中帮助学生形成良好的问题解决能力，有利于促进学生数学核心素养发展，能够帮助学生夯实学好数学学科的基础。本文就如何在中学数学教育中培养学生的问题解决能力，展开了详细分析和深度探索，并且提出了..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/2ab6eeb61aee4d5a9536cfc915b9ce87.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Research on the cultivation of problem-solving abi.pdf"
+  },
+  {
+    "issue": "2024年 6卷 3期",
+    "title": "Analysis of the mathematical \"proof by contrary\" theory and its application in middle school mathematics [数学“反证法”理论的分析及其在中学数学中的应用]",
+    "abstract": "反证法是中学数学教学的一种常见证明方法，主要应用于数学解题，具体根据已知条件对其进行推算与证明，帮助学生梳理解题思路，寻求正确的解题答案。不仅如此，反证法对学生的逻辑思维以及探索能力培养起到积极影响。..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/283b6d5204a845c8bbc807f9261c92c1.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Analysis of the mathematical proof by contrary t.pdf"
+  },
+  {
+    "issue": "2024年 6卷 3期",
+    "title": "Research on the teaching reform of university mathematics courses based on cdio concept [基于CDIO理念大学数学课程教学改革的研究]",
+    "abstract": "在大学数学教学中，培养学生的分析能力、逻辑思维与创新能力是大学数学学科的基础任务，这种教学目标与CDIO理念存在许多相似之处，因此在大学数学教学中结合CDIO理念能够促进教学优化，有效地提升大学数学教学质量与..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/d25ee0608b8c4182867db5dc22d8a0d4.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 3期",
+    "title": "The construction of one-sheet hyperboloid [单叶双曲面的几种构造]",
+    "abstract": "单叶双曲面作为一类直纹曲面，因其优美的几何结构，在工程建筑中常常受到设计师的青睐。为了更好地理解单叶双曲面的内在几何结构，本文介绍该曲面的四种构造方法，其中两种方法是把该曲面作为旋转曲面，另外两种方法..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/387938cf3621425a8e7f60c89e867451.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 3期",
+    "title": "Research on the application of isomorphism in function problems [同构法在函数问题中的应用研究]",
+    "abstract": "在高中数学中，同构法是解决函数问题的重要策略。同构法作为一种创新的解题方法，为函数问题的解决提供了新的视角，激发了学生对数学问题的探索热情。因此，本文旨在通过同构法和导数的综合运用，探索解决高中数学函..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/70775e11198a48b18d233166d435c9a2.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Research on the application of isomorphism in func.pdf"
+  },
+  {
+    "issue": "2024年 6卷 3期",
+    "title": "The strategy for using derivative to prove inequality problem in college entrance examination mathematics [例析高考数学运用导数证明不等式问题的策略]",
+    "abstract": "导数背景下的不等式证明问题在高考命题中占据重要地位， 常常以选择题和解答题的形式出现. 新高考政策实施后，不等式导数问题的所占比重相比于旧高考有所提升. 此类试题灵活多变，通常设有两至三个小问，设计及类讨..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/011525ffa3e64d8b9ddfe3645813766f.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\The strategy for using derivative to prove inequal.pdf"
+  },
+  {
+    "issue": "2024年 6卷 3期",
+    "title": "Research on solving sequence summation problems in mathematical competitions [数学竞赛中解决数列求和问题的研究]",
+    "abstract": "数列是高中数学三条知识主线其一的几何与代数中的重要内容，通过对数列的学习可以加深学生对函数问题的理解，也为未来高等数学中的级数，分部积分法等相关内容的学习做好铺垫。数列求和作为数列中最常见的问题，不仅..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/97ad376a216b4cd1916b5213058da423.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Research on solving sequence summation problems in.pdf"
+  },
+  {
+    "issue": "2024年 6卷 3期",
+    "title": "The application of combination of number and form in high school mathematics [数形结合在高中数学中的应用]",
+    "abstract": "数形结合思想是高中数学中的重要内容，许多数学知识需要结合图形来加深对题目以及知识的理解。本文通过对近几年高考以及各地模拟考试题的分析，整理归纳出数形结合思想在数学题解中的应用。",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/e6fc5ad48cb14e90b778eb675eded353.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\The application of combination of number and form .pdf"
+  },
+  {
+    "issue": "2024年 6卷 3期",
+    "title": "New criteria for generalized Nekrasov matrices [广义Nekrasov矩阵的新判定条件]",
+    "abstract": "广义Nekrasov（非奇异H-矩阵）矩阵在经济数学、控制理论、数值代数等诸多领域中发挥了重要的作用，本文研究了广义Nekrasov矩阵的判定条件问题。从矩阵的元素出发，利用不等式放缩的方法，构造正对角矩阵因子，给出了..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/7518e525c60b4f3fa7f13a9f3fee5458.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 4期",
+    "title": "Analysis of the construction method to solve high school series competition questions [构造法解高中数列竞赛题例析]",
+    "abstract": "数列是高考和竞赛中重要内容，数列问题是考查学生逻辑推理、转化化归的有效载体。不管是在求数列通项或证明数列相关不等式时常常用到构造法，本文将通过例题分析如何用构造法解高中数列竞赛题。",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/1f630f79a226426eb8e41f7dc1084ab9.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Analysis of the construction method to solve high .pdf"
+  },
+  {
+    "issue": "2024年 6卷 4期",
+    "title": "Analysis of college entrance examination mathematics test questions based on SOLO classification theory - Taking the 2024 national mathematics new college entrance examination paper I as an example [基于SOLO分类理论的高考数学试题分析——以2024年全国数学新高考Ⅰ卷为例]",
+    "abstract": "本文基于SOLO分类理论对2024年全国数学新高考Ⅰ卷进行分析，重点评估试卷在逻辑思维、概念理解、问题分析、创新和数学应用方面的表现。研究发现，试卷涵盖多个领域，但知识点分布不均，突出考查多点结构和抽象拓展结..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/9fec3be383d241d3840e652f19954017.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Analysis of college entrance examination mathemati.pdf"
+  },
+  {
+    "issue": "2024年 6卷 4期",
+    "title": "Analysis of mathematics culture in henan middle school entrance examination in recent three years [近三年河南省中考试题中的数学文化分析]",
+    "abstract": "本文以河南省近三年中考数学试题为研究对象，从试题数量、题型分布、知识领域、文化类型和地域特色五个方面对试题中的数学文化进行统计与分析。研究发现数学文化试题数量保持稳定，有显著的时代特征和地域特色，但文..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/571d2bdfc5f94476afe3ddbf1897d62d.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Analysis of mathematics culture in henan middle sc.pdf"
+  },
+  {
+    "issue": "2024年 6卷 4期",
+    "title": "Crop Disease Image Recognition Method Based on ConvNeXt [基于ConvNeXt的农作物病害图像识别方法]",
+    "abstract": "智慧农业是未来农业的发展方向。治理农作物病害最关键的问题是精确的判断病害类型。为了进一步提高农作物病害识别准确率，提出一种改进ConvNeXt的农作物病害识别方法，为了提升网络的特征提取能力，将ConvNeXt基本模..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/4cc88825f30643a19e3422aaee0f7c18.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 4期",
+    "title": "Construction of Practice Teaching System of Mathematics Major in Applied Colleges and Universities under the Background of Industry-Teaching Integration [产教融合背景下应用型高校数学专业实践教学体系构建]",
+    "abstract": "目前产教融合背景下，高校正在朝着应用型方向转变，在增强高校综合实力的同时，为社会培养更多的应用型人才。数学专业在众多高校专业中比较有代表性，该专业应基于产教融合背景、应用型高校建设趋势等逐步构建完善的..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/61d2f5db25c34e60accdd90757e24be2.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 4期",
+    "title": "Components and Cultivation Strategies of Mathematical Arithmetic Ability in High Schools [高中数学运算能力的组成及培养策略]",
+    "abstract": "运算能力是高中生学习数学所具备的基础能力之一，对他们的习题练习提供很好帮助。新课改背景下，高中数学教师要注重对学生运算能力的培养，帮助他们深层理解数学原理，提高其数学运算效率和质量。基于此，本文对高中..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/c47feb2014fe4a088ed694d5511957af.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Components and Cultivation Strategies of Mathemati.pdf"
+  },
+  {
+    "issue": "2024年 6卷 4期",
+    "title": "Connecting prior knowledge and reflecting overall teaching - Taking the teaching of \"Image of Sine and Cosine Function\" as an example [串联前知，体现整体教学——以“正余弦函数的图像”教学为例]",
+    "abstract": "“正余弦函数”是高中初等函数学习的重要一环，在学习了指数、幂、对数三种初等函数之后，学生初步构建出初等函数的学习逻辑，正余弦函数的图像这节课的学习可以沿用初等函数学习逻辑，搭建起初等函数学习的整体路径..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/4a3f5880548249f094adadcc49e2e55f.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Connecting prior knowledge and reflecting overall .pdf"
+  },
+  {
+    "issue": "2024年 6卷 4期",
+    "title": "Study on some common methods for function limit [函数极限的几类常见求解方法探析]",
+    "abstract": "函数极限计算是高等数学教学中的一类重要问题，是函数微积分学研究的基础，理解并灵活运用极限的各种计算方法对学好高等数学至关重要。由于极限类型和求解方法的多样性，很多学生无法很好地掌握每种方法的适用条件和..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/52218cfd38614459bb8f951b5b825460.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 4期",
+    "title": "Multiple solutions to one question: fostering variation, enhancing common understanding, and boosting quality [一题多解促变式，强化通性提素养]",
+    "abstract": "从数学核心素养出发，以一道正方形为背景的几何题培养学生构造辅助线的能力，同时从多视角出发探究解题思路，并以此拓展，强化通性通法，以不变应万变,实现学生思维深、广度的发展，知识的融合以及学习本质的探究。",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/f84abd423009406c8bae6861f7c40b7a.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2024年 6卷 4期",
+    "title": "Solitons to multi-component KdV systems [多分量KdV系统的孤子解]",
+    "abstract": "本文以二分量和三分量KdV系统为例，利用Riccati方程的扭结解来生成这些KdV系统的孤子解。本文的方法可用于构造更多个分量的KdV系统的孤子解。",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/f73557d278bb476b838e158a2673ff21.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2025年 7卷 1期",
+    "title": "Bäcklund transformation for the higher-order Heisenberg equation [高阶Heisenberg方程的贝克隆变换]",
+    "abstract": "高阶Heisenberg方程作为非线性科学和数学物理领域的重要模型，其解的结构和动力学行为一直是研究热点。本研究基于贝克隆变换理论，构建了高阶Heisenberg方程的贝克隆变换，并将其作用于平凡解而成功生成了呼吸子解和..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/20e0e0242d064af992815fc184013a46.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2025年 7卷 1期",
+    "title": "Exploration of solutions to middle school mathematics examination questions from the perspective of core competencies- Thoughts on a final question in the Middle School Entrance Examination [核心素养视角下中考数学试题解法探究—关于一道中考压轴题的思考]",
+    "abstract": "中考数学试题直接影响着初中的数学教学，本文对一道2024年徐州市中考数学压轴题，采用一题多解的形式探讨几何中动态定值问题的解题策略，帮助学生在复杂的动态几何问题中抓住关键要素，建立几何模型，通过转化与推理..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/c0e170258fce4e51b4f1faf7427b958a.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Exploration of solutions to middle school mathemat.pdf"
+  },
+  {
+    "issue": "2025年 7卷 1期",
+    "title": "Treat the unknown as the known and appreciate the charm of mathematics [把未知当已知，领略数学之魅]",
+    "abstract": "在解决函数和方程问题时，题设常以特定符号预设变量关系，而在惯性思维的影响下，学生常常会以固定的符号，如 ， 等为未知量或者解题时执着于结论推导，导致思路受限.本文通过典型案例分析，提出一种创新思维策略：..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/8d33f52030c943ff9f1c327b57acedf7.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2025年 7卷 1期",
+    "title": "Elementary school mathematical model concept based on the Rasch model Assessment research [基于 Rasch 模型的初中数学模型观念的测评研究]",
+    "abstract": "随着核心素养教育理念的推进，数学建模能力成为初中数学教育的重要目标。本研究以Rasch模型为理论框架，构建初中数学模型观念评价指标体系，编制测试工具，并对某市某中学初二学生进行实证分析。研究发现：学生模型..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/9d2023fef99b4727b03baec96ceb0abb.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Elementary school mathematical model concept based.pdf"
+  },
+  {
+    "issue": "2025年 7卷 1期",
+    "title": "Exploration of practical teaching of university mathematics driven by new engineering and data [新工科与数据驱动的大学数学实践教学探索]",
+    "abstract": "新工科与数据驱动的大学数学实践教学以互联网、人工智能等新兴技术为背景，通过重构教学模式提升学生的数据素养与创新能力。新工科强调跨学科融合，将大数据、云计算等技术融入数学课程设计，借助数据驱动的决策模型..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/2299bf23c95c4b9bbe05e9f87b5eef8b.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2025年 7卷 1期",
+    "title": "Research on the reform of university mathematics course teaching based on CDIO concept [基于CDIO理念大学数学课程教学改革的研究]",
+    "abstract": "本文以CDIO工程教育理念为指导，针对传统大学数学课程教学中存在的理论与实践脱节、学生应用能力培养不足等问题，探索数学课程教学改革路径。研究聚焦课程体系重构与教学模式创新，通过整合“构思-设计-实现-运作”..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/ab5e5bd46a2147d09b34f0d09f7d153d.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2025年 7卷 1期",
+    "title": "Research on dynamic evaluation of mathematics teaching in colleges and universities under the OBE education concept [OBE教育理念下高校数学教学动态评价研究]",
+    "abstract": "本文基于成果导向教育（OBE）理念，针对高校数学教学评价体系存在的静态化、单向性问题，构建动态化教学评价模型。研究聚焦学生数学能力发展过程，通过融合过程性评价与结果性评价，建立涵盖知识掌握、思维训练、实..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/fe8dc002271345d58e38d9feaff3f045.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2025年 7卷 1期",
+    "title": "Analysis of mathematics questions in senior high school entrance examination based on SOLO classification theory-- Take Wuxi High School Entrance Examination in 2024 as an example [基于SOLO分类理论的中考数学试题分析——以2024年无锡中考为例]",
+    "abstract": "本研究以2024年无锡中考数学试卷为例，基于SOLO分类理论从试题类型与课程内容两方面进行分析。研究发现，试卷结构层次分明，难度设计合理稳定，具有较强的区分度。通过不同层次的试题分析，为教师提供教学参考，帮助..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/fcd2c302fc244193b15ad869529c762a.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Analysis of mathematics questions in senior high s.pdf"
+  },
+  {
+    "issue": "2025年 7卷 1期",
+    "title": "Exploration of the course group teaching mode of specialty-and-creation integration for mathematics majors under the background of double creation [双创背景下数学专业“专创融合”课程群教学模式探索]",
+    "abstract": "基于“专创融合”的OBE（成果导向）教育理念，立足课程、创新创业项目和学科竞赛三位一体课程群设计了数学专业“课创赛”的“3555”教学模式，即以数学类专业数学模型、数学建模实践和应用数学课程设计3门课程为依托..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/98217c9a6dfc48548b08d28ffaff4992.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2025年 7卷 2期",
+    "title": "The application of auxiliary element strategy in solving college entrance examination mathematics problems——taking 2024 college entrance examination questions as examples [运用辅助元素策略解高考数学题例析——以2024年高考题为例]",
+    "abstract": "辅助元素策略是高中数学中常见且实用的一种解题思路，能够帮助学生在解题过程中构建中间桥梁，将复杂问题逐步转化为清晰可解的步骤，降低思维负担。然而，许多学生对这一策略的理解仍不够深入，缺乏主动运用的意识。..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/9f485e8030a64fca85a75bd6f5490b45.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\The application of auxiliary element strategy in s.pdf"
+  },
+  {
+    "issue": "2025年 7卷 2期",
+    "title": "A combinatorial proof framework for Goldbach's conjecture [哥德巴赫猜想的一个组合反证框架]",
+    "abstract": "本文提出了一种基于组合数学和解析数论相结合的哥德巴赫猜想证明方法。通过构建奇数序列的严格配对系统，并引入改进的素数分布估计，我们证明了每个不小于六的偶数都可以表示为两个奇素数之和。主要创新点包括：首先..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/f080fc07d78b44ddac7bfc443f3d4925.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2025年 7卷 2期",
+    "title": "Analysis of reflection chain rings elevating multi-solution thinking [剖析翻折链环 跃升多解思维]",
+    "abstract": "翻折变换是初中几何的核心载体，对发展学生空间观念与逻辑推理能力具有关键价值.本文以一道中考双重翻折几何问题为研究对象，通过系统剖析多元解法的思维路径，揭示几何知识网络的内在关联，为培养学生直观想象、逻..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/8ad7f9375d3d4db9a1d43c7de3667e1e.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Analysis of reflection chain rings elevating multi.pdf"
+  },
+  {
+    "issue": "2025年 7卷 2期",
+    "title": "A review of university mathematics teaching models based on information technology and smart classrooms [基于信息化与智慧课堂的大学数学教学模式研究综述]",
+    "abstract": "随着信息技术的快速发展，智慧课堂和信息化教学在高等教育领域得到了广泛应用，尤其在大学数学教学中展现出显著的改革潜力。本文基于近几年的前沿研究，对信息化与智慧课堂在大学数学教学模式中的应用进行系统综述。..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/17a8859b2b494a0882ba8b4b784e1a00.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2025年 7卷 2期",
+    "title": "An LED high-fidelity color gamut conversion model based on convex optimization and DE2000 chromatic aberration [基于凸优化与DE2000色差的LED高保真色域转换模型]",
+    "abstract": "针对 LED 显示中广色域视频源到有限色域 RGB 屏的转换失真及多基色系统转换中的欠定与非负约束矛盾，提出基于 CIE DE2000 色差优化的色域转换模型。广色域映射采用 “线性转换 - 凸约束 - 局部优化” 模型，将 BT.20..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/62bc182717184e668afb7831c1c1dd98.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2025年 7卷 2期",
+    "title": "Generalized Turán problems for a matching and an even cycle [关于匹配和偶圈的广义 Turán问题]",
+    "abstract": "Turán数是极值图论的经典研究问题。星图 是由两个点集构成的一个完全二部图，其满足：一个集合只有一个顶点，另一个集合有 个顶点。设 是一个图集合。广义Turán数 表示在一个具有 个顶点且不包含 中任意图为子图的..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/9ea5b10014f2492ca1678f4160e829e3.pdf",
+    "is_target": false,
+    "local_path": null
+  },
+  {
+    "issue": "2025年 7卷 2期",
+    "title": "Application of Polya’s “How to Solve Problems” in junior high school mathematics problem solving teaching —— Take the 17th question of Jiangxi Middle School Mathematics paper in 2024 as an example [波利亚“怎样解题表”在初中数学解题教学中的应用——以2024年江西中考数学卷第17题为例]",
+    "abstract": "数学教育家乔治·波利亚提出的“怎样解题表”作为系统化解题方法论，为揭示数学思维规律提供了重要理论框架。本研究基于波利亚解题理论，选取2024年江西中考数学试卷第17题为研究对象，通过课堂观察与案例分析相结合..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/5a86539e91bd4367a7d02dc10efb5c96.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Application of Polya’s “How to Solve Problems” in .pdf"
+  },
+  {
+    "issue": "2025年 7卷 2期",
+    "title": "Case studies on problem-solving strategies for the sum of the first n terms in sequences in the national college entrance examination [例析高考数列前n项和问题的求解策略]",
+    "abstract": "高中数学中的“数列求前n和问题”是高考中常见的重点题型，难度一般属于中等偏下，主要考查学生的逻辑推理能力和数学运算能力。本文结合历年高考数学真题，详细分析了六种数列求前n和的方法：求和公式的直接应用、错..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/84be7a4068db4d54b6be7792c596b643.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Case studies on problem-solving strategies for the.pdf"
+  },
+  {
+    "issue": "2025年 7卷 2期",
+    "title": "Five typical question types of triangle solving problems in the college entrance examination and their solution strategies [高考中解三角形问题的五种典型题型及求解策略]",
+    "abstract": "本文以高考数学中解三角形问题为研究对象，旨在系统分析其题型特征与解题策略。通过梳理近五年全国高考试卷，归纳出五类典型题型：边角互换、面积计算、最值分析、取值范围和综合应用。针对每一类别，本文采用案例分..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/569274c4d62f4a13a2457956cb5ed3cc.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Five typical question types of triangle solving pr.pdf"
+  },
+  {
+    "issue": "2025年 7卷 2期",
+    "title": "Middle school common “Rectangle Folding Model” classification and problem solving exploration [初中常见“矩形翻折模型”分类与解题探究]",
+    "abstract": "新课标将几何直观和空间观念确立为初中数学核心素养的重要组成部分. 在这一背景下, 翻折问题作为几何领域的经典内容, 凭借其独特的综合性特征, 已成为中考数学命题中几何部分的重点考查方向. 本文基于课标要求, 系统..",
+    "pdf_url": "https://www.oajrc.org/FileUpload/PdfFile/e54ac438ebdd45c1b731f59a40396f5b.pdf",
+    "is_target": true,
+    "local_path": "pdf_raw\\Middle school common “Rectangle Folding Model” cla.pdf"
+  }
+]
