@@ -46,6 +46,7 @@ def scrape_and_stitch_document(driver, url: str, output_image: str):
     downloads all page images, and stitches them into a single vertical image.
     Uses an existing webdriver instance.
     """
+    IMAGE_SELECTOR = "img._curr-img_1arrx_9, img.ant-image-img, img.img-div-content, img.css-198drv2"
     try:
         print(f"Opening URL: {url}")
         driver.get(url)
@@ -91,12 +92,32 @@ def scrape_and_stitch_document(driver, url: str, output_image: str):
             # 2. Try to find and click the "continue reading" button via JS (more reliable)
             try:
                 clicked = driver.execute_script("""
+                    // Hide potential blocking selection layers
+                    var blockers = document.querySelectorAll('[class*="_pc-selection_"], [class*="selection-layer"]');
+                    blockers.forEach(el => el.style.pointerEvents = 'none');
+
                     var btn = document.querySelector('._continue-read_1tndn_1') || 
                               document.querySelector('._continue-read-mask_1tndn_1') ||
-                              Array.from(document.querySelectorAll('div')).find(el => el.textContent.includes('继续浏览') || el.textContent.includes('继续阅读'));
-                    if (btn && btn.offsetParent !== null) { // check if visible
+                              document.querySelector('[class*="continue-read"]') ||
+                              Array.from(document.querySelectorAll('div, button, span')).find(el => 
+                                  (el.textContent.includes('继续浏览') || el.textContent.includes('继续阅读')) && 
+                                  el.offsetWidth > 0 && el.offsetHeight > 0
+                              );
+                    if (btn) {
                         btn.scrollIntoView({block: 'center'});
+                        // Force it to be clickable
+                        btn.style.pointerEvents = 'auto';
+                        btn.style.visibility = 'visible';
+                        btn.style.opacity = '1';
+                        
                         btn.click();
+                        // Try dispatching a real click event as well
+                        var ev = new MouseEvent('click', {
+                            'view': window,
+                            'bubbles': true,
+                            'cancelable': true
+                        });
+                        btn.dispatchEvent(ev);
                         return true;
                     }
                     return false;
@@ -114,12 +135,13 @@ def scrape_and_stitch_document(driver, url: str, output_image: str):
                             list.style.overflow = 'visible';
                         }
                     """)
-                    continue
+                    return
+                    # continue
             except Exception as e:
                 print(f"Note: Error during JS click: {e}")
 
             # Check if we are still loading new images
-            current_image_count = len(driver.find_elements(By.CSS_SELECTOR, "img._curr-img_1arrx_9"))
+            current_image_count = len(driver.find_elements(By.CSS_SELECTOR, IMAGE_SELECTOR))
             print(f"Images loaded: {current_image_count}")
             
             if current_image_count > last_image_count:
@@ -133,7 +155,7 @@ def scrape_and_stitch_document(driver, url: str, output_image: str):
                 print(f"Reached total pages ({total_pages}).")
                 break
                 
-            if no_change_count >= 3:
+            if no_change_count >= 2:
                 print("No more images loading after multiple attempts. Assuming end of document.")
                 break
         
@@ -141,9 +163,9 @@ def scrape_and_stitch_document(driver, url: str, output_image: str):
         print("Finding all page images...")
         # Wait until at least one image is loaded
         WebDriverWait(driver, 15).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "img._curr-img_1arrx_9"))
+            EC.presence_of_element_located((By.CSS_SELECTOR, IMAGE_SELECTOR))
         )
-        image_elements = driver.find_elements(By.CSS_SELECTOR, "img._curr-img_1arrx_9")
+        image_elements = driver.find_elements(By.CSS_SELECTOR, IMAGE_SELECTOR)
         image_urls = [el.get_attribute('src') for el in image_elements if el.get_attribute('src')]
         print(f"Found {len(image_urls)} page images.")
 
