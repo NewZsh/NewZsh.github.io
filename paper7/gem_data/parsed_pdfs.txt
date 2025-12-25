@@ -1,79 +1,163 @@
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\A discussion on the inspiration of IMM theoretical.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\An example analysis of solving the mathematical pr.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Analysis of college entrance examination mathemati.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Analysis of function questions in yangzhou middle .pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Analysis of mathematics culture in henan middle sc.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Analysis of mathematics questions in senior high s.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Analysis of probability and statistics questions i.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Analysis of reflection chain rings elevating multi.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Analysis of the Application of Mathematical Modeli.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Analysis of the construction method to solve high .pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Analysis of the mathematical proof by contrary t.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Analysis of the Method of Constructor to Solve Mid.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Analysis on the law of solving conic curve problem.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Application of Polya’s “How to Solve Problems” in .pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Case studies on problem-solving strategies for the.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Clever use of models to solve math problems in the.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Components and Cultivation Strategies of Mathemati.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Connecting prior knowledge and reflecting overall .pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Discuss the strategy of solving similar triangles .pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Elementary school mathematical model concept based.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Exploration of solutions to middle school mathemat.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Exploration on the innovative application of life .pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Five typical question types of triangle solving pr.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Graphs help solve abstract function problems--Take.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Methods of finding the range of parameters in the .pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Middle school common “Rectangle Folding Model” cla.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Research on middle school mathematics teaching des.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Research on solving sequence summation problems in.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Research on the application of isomorphism in func.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Research on the cultivation of problem-solving abi.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Research on the implementation strategy of large u.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Skillfully use proportional line segment to solv.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Skillfully use the construction methods to solve a.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Solving strategy of trigonometric function evaluat.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Statistics and analysis of plane analysis geometry.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Statistics and analysis of trigonometric function .pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\The application of auxiliary element strategy in s.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\The application of combination of number and form .pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\The application of Expansion and contraction metho.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\The application of function parity in college entr.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\The exploration of problems about definite value i.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\The method of solving general term formula of sequ.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\The strategy for using derivative to prove inequal.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Use rotation skillfully to reduce the elements [巧用.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/amm\Using rotation transformation to solve junior high.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\“数学问题”简解巧法.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\一道数学题的误解、正解与巧解分析.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\中学数学解题中的通解与巧解探析.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\例析运用物理知识巧解数学问题.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\例谈初中数学题的巧解.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\初中数学几类问题的巧解.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\利用定点巧解数学问题.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\利用构造法巧解数学问题.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\妙用数学思想,巧解数学题目.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\妙用数学思想方法巧解初中数学例题.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\妙用数学思维,巧解数学难题.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\妙解数学题.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\巧妙解决数学问题.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\巧用数学方法+妙解数学问题 (1).pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\巧用数学方法+妙解数学问题.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\巧解一道数学竞赛题.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\巧解数学难题二则.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\巧解数学题的几点方法.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\巧解生活中的数学难题.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\应用数学方法巧解物理问题.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\数学巧解应用题.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\数学巧解题例解析.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\数学解答题解题技巧与方法详解.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\数学解题技巧与方法详解.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\数学解题方法与技巧.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\数学问题的巧解策略.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\数学题巧解思路.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\数学题巧解的几种途径.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\浅谈数学解题技巧.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\解决数学问题的技巧.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\趣味数学——巧解数学题.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\运用数学思想方法巧解数学题.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\运用数学知识巧解物理问题.pdf
-D:\work\NewZsh.github.io\paper7\gem_data\pdf_raw/quark\高中数学巧学巧解大全.pdf
+pdf_raw/amm\A discussion on the inspiration of IMM theoretical.pdf
+pdf_raw/amm\An example analysis of solving the mathematical pr.pdf
+pdf_raw/amm\Analysis of college entrance examination mathemati.pdf
+pdf_raw/amm\Analysis of function questions in yangzhou middle .pdf
+pdf_raw/amm\Analysis of mathematics culture in henan middle sc.pdf
+pdf_raw/amm\Analysis of mathematics questions in senior high s.pdf
+pdf_raw/amm\Analysis of probability and statistics questions i.pdf
+pdf_raw/amm\Analysis of reflection chain rings elevating multi.pdf
+pdf_raw/amm\Analysis of the Application of Mathematical Modeli.pdf
+pdf_raw/amm\Analysis of the construction method to solve high .pdf
+pdf_raw/amm\Analysis of the mathematical proof by contrary t.pdf
+pdf_raw/amm\Analysis of the Method of Constructor to Solve Mid.pdf
+pdf_raw/amm\Analysis on the law of solving conic curve problem.pdf
+pdf_raw/amm\Application of Polya’s “How to Solve Problems” in .pdf
+pdf_raw/amm\Case studies on problem-solving strategies for the.pdf
+pdf_raw/amm\Clever use of models to solve math problems in the.pdf
+pdf_raw/amm\Components and Cultivation Strategies of Mathemati.pdf
+pdf_raw/amm\Connecting prior knowledge and reflecting overall .pdf
+pdf_raw/amm\Discuss the strategy of solving similar triangles .pdf
+pdf_raw/amm\Elementary school mathematical model concept based.pdf
+pdf_raw/amm\Exploration of solutions to middle school mathemat.pdf
+pdf_raw/amm\Exploration on the innovative application of life .pdf
+pdf_raw/amm\Five typical question types of triangle solving pr.pdf
+pdf_raw/amm\Graphs help solve abstract function problems--Take.pdf
+pdf_raw/amm\Methods of finding the range of parameters in the .pdf
+pdf_raw/amm\Middle school common “Rectangle Folding Model” cla.pdf
+pdf_raw/amm\Research on middle school mathematics teaching des.pdf
+pdf_raw/amm\Research on solving sequence summation problems in.pdf
+pdf_raw/amm\Research on the application of isomorphism in func.pdf
+pdf_raw/amm\Research on the cultivation of problem-solving abi.pdf
+pdf_raw/amm\Research on the implementation strategy of large u.pdf
+pdf_raw/amm\Skillfully use proportional line segment to solv.pdf
+pdf_raw/amm\Skillfully use the construction methods to solve a.pdf
+pdf_raw/amm\Solving strategy of trigonometric function evaluat.pdf
+pdf_raw/amm\Statistics and analysis of plane analysis geometry.pdf
+pdf_raw/amm\Statistics and analysis of trigonometric function .pdf
+pdf_raw/amm\The application of auxiliary element strategy in s.pdf
+pdf_raw/amm\The application of combination of number and form .pdf
+pdf_raw/amm\The application of Expansion and contraction metho.pdf
+pdf_raw/amm\The application of function parity in college entr.pdf
+pdf_raw/amm\The exploration of problems about definite value i.pdf
+pdf_raw/amm\The method of solving general term formula of sequ.pdf
+pdf_raw/amm\The strategy for using derivative to prove inequal.pdf
+pdf_raw/amm\Use rotation skillfully to reduce the elements [巧用.pdf
+pdf_raw/amm\Using rotation transformation to solve junior high.pdf
+pdf_raw/quark\“数学问题”简解巧法.pdf
+pdf_raw/quark\一道数学题的误解、正解与巧解分析.pdf
+pdf_raw/quark\中学数学解题中的通解与巧解探析.pdf
+pdf_raw/quark\例析运用物理知识巧解数学问题.pdf
+pdf_raw/quark\例谈初中数学题的巧解.pdf
+pdf_raw/quark\初中数学几类问题的巧解.pdf
+pdf_raw/quark\利用定点巧解数学问题.pdf
+pdf_raw/quark\利用构造法巧解数学问题.pdf
+pdf_raw/quark\妙用数学思想,巧解数学题目.pdf
+pdf_raw/quark\妙用数学思想方法巧解初中数学例题.pdf
+pdf_raw/quark\妙用数学思维,巧解数学难题.pdf
+pdf_raw/quark\妙解数学题.pdf
+pdf_raw/quark\巧妙解决数学问题.pdf
+pdf_raw/quark\巧用数学方法+妙解数学问题 (1).pdf
+pdf_raw/quark\巧用数学方法+妙解数学问题.pdf
+pdf_raw/quark\巧解一道数学竞赛题.pdf
+pdf_raw/quark\巧解数学难题二则.pdf
+pdf_raw/quark\巧解数学题的几点方法.pdf
+pdf_raw/quark\巧解生活中的数学难题.pdf
+pdf_raw/quark\应用数学方法巧解物理问题.pdf
+pdf_raw/quark\数学巧解应用题.pdf
+pdf_raw/quark\数学巧解题例解析.pdf
+pdf_raw/quark\数学解答题解题技巧与方法详解.pdf
+pdf_raw/quark\数学解题技巧与方法详解.pdf
+pdf_raw/quark\数学解题方法与技巧.pdf
+pdf_raw/quark\数学问题的巧解策略.pdf
+pdf_raw/quark\数学题巧解思路.pdf
+pdf_raw/quark\数学题巧解的几种途径.pdf
+pdf_raw/quark\浅谈数学解题技巧.pdf
+pdf_raw/quark\解决数学问题的技巧.pdf
+pdf_raw/quark\趣味数学——巧解数学题.pdf
+pdf_raw/quark\运用数学思想方法巧解数学题.pdf
+pdf_raw/quark\运用数学知识巧解物理问题.pdf
+pdf_raw/quark\高中数学巧学巧解大全.pdf
+pdf_raw/screenshots/previewid=169A04E97D1B9D441D32561D57E89144&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=F897B317F8EA30F5BDA999E9A8DCC836&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=8E68F597F8EE9655AA810435F3B96728&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=94B51B17D99B14879847114AA7DDA88B&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=E710E44C170B80BF7CB8E0A85A141589&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=F44E5905E18D6342B53FDB902CD6BDF3&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=CA89F244522D654B6EDCEB8DBCA46DDE&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=D1124E565B35F5F123CC4361E1471E58&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=79DC100E7A3B5C4BD255AAB8246845FC&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=ED65BBAAF9D656E016E2969446B5DF8B&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=50F308E6DB028DB16055FAFB5FF14EAA&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=2E29F46AAB76AB794374EA009CD20E25&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=C13117D7A595D5D536605A294F5C83A1&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=2E894E5330A306A478F2FA0ECCF4605C&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=D7A62EDC1972A9B1950FE14F1818A8E9&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=7350A52B4758699AA54838C6FABF4DB2&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=264702CC12E68C30931F621B4199BF50&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=B54AC920D170A80C5C9DA36DEBFF75A8&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=3832A6FAA3D8F91876079F5182C73CE4&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=DDE194FE6CD935935064FCDEBD2B4095&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=AA5EF90617B714D3510FC99527336616&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=42DC1A8D89CDB577CF5E9E043987B468&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=E030C63648311583482586CFA10FB824&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=A93B9A56E3C2FC060C16851505B0EECB&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=DD6EE3C952DD649C4C5E35ED09F169CE&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=378C8456C330B90A037C8DDAF7B42943&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=751BAF9D871B1AAADD168286E6BEAC2C&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=9FD2992395A191804890861309145328&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=BB8A45462F1A90D3DFCBCBF35C6A3398&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=C3D159B447F9E001FBE2A56374623C15&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=6FC72DC409D25288B5A6C2A47B5FE364&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=CFE3D5E7FF743A1010E227A90BA69DEA&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=59B256C2EB5620C14869235E62E903AB&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=9EEC2B127B5354AB012983D9A5BA5329&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=5C646D68D9DC4D5D8B298553D59CCC88&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=F30040DDFF11F4D6380409543D3F9218&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=C9A3EA7037E2BFB55A2C4009D3DD6824&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=D913D63F104EAB0DA2698842E00AFF8E&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=C6C9352FEADE1491B2EBD396B60BC190&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=5343EA444CDEB3B563E206CCF75ACCC1&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=986AF1D5B7B2EDF8C897695D38046968&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=08F7442E96AC800D79B0EDF989AA19A3&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=0B35F02E21D1743E835CAB50A7033477&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=3FEDF25D061FE11FBBA21DDCBB94E026&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=5033ADC7DBE2CA3C1625007FED66658A&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=06795D2272CD73293E2A0933A126C14B&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=DC64ED73DA67C6AA9CF3FB4ED9BD5929&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=B7A899D82638F2F5E920BEAA63CF9EE3&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=E265062366FD310D0E1BA49FD07A7620&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=E6FF4D15E5F83A64A7D974D51309C8AF&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=D0F6C769DB4FE8C14E8D40902E9D66F4&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=0C8F87C7665A0248ED4636EDF5B8ADF4&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=E465067357E8A54E3A1D1C7338E776C7&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=154A7208F2DA40E44BB6C02572D24C23&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=EFBFC16409CAFA46C268BE392D066740&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=1E70446CC3F1A9B264C1376C12C9192F&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=F567B6BCD10CDBC7EC0DF4F95D357CF7&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=1B68546AB9A684DB960A60FF2844D448&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=0FF4B15E71B69FADD87D6F6915F3B92E&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=872ECE8899E195CCCB14FFD460D0739B&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=34C5BD6B6DA3D624C99AE80FED61821B&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=ECA77B9FE006003BB9E70B5AE69E1794&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=46AE983B201F469C244283F7EFB41E34&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=7C3C51211FFA6A437E1A772104E882B8&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=B5957076AE66F5078A8CF595FB663E16&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=202F47E997FD37A54C4F4D5FB28F80FD&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=2E1C76B9803542AF3ACADCBC0CDAA463&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=08B81DDF69F926D09ACD59DD8FFC4977&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=414633ED9DF743CD2BD9B8EB32A909AC&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=030E093CF8D6C5354F89C24BBB2EEE27&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=7D4507561E3C65F768E000660F39B7F8&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=BAD096F0790A118CDE7F242988A1443B&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=45801538BA660248BE43DAD414298C69&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=6242C1E9E443022738A0C51B3CC77B99&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=AD14A52C5F85553499B1705363D1F8C7&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=9A5237FDF130E3C814CEB7F484407441&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=D2B657156E1D14EAB031B885D9F3E935&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=33B829E7AABD35690B8852784AFCE9FB&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=46D52B9E603287A5EDB80FAD6FC487A9&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=2EAFF53EAB7AA30B08EA954DE1E758F0&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=AF4EEE48012F7B496DB3ED477C7BBF98&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=9B885DC55CE72712C3D70F5D5C7BD39A&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=3D3E3B47E4D71BE8341C404301400FED&fp_from=vsearch.png
+pdf_raw/screenshots/previewid=95E0B0AB78D8591460D090AEEBD6FE64&fp_from=vsearch.png

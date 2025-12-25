@@ -107,12 +107,41 @@ async def parse_pdf(pdf_path: str):
     
         time.sleep(1)
 
-def parse_pdfs(pdf_dir="pdf_raw", output_file="problems.json"):
+async def parse_img(image_path: str):
+    """
+    Parse a single image to extract math problems using Gemini API.
+
+    Args:
+        image_path: Path to the image file.
+
+    Returns:
+        List of extracted problems.
+    """
+    prompt = f"""\n如果图片中有例题和解答，请提取出来并按格式返回：
+    题目使用<question></question>包裹
+    解答使用<answer></answer>包裹
+    最终答案用<final_answer></final_answer>包裹
+    解法提示用<hint></hint>包裹，注意，解法提示只需要用一个精确的数学术语；
+    题干中的图片使用<img_ggb></img_ggb>包裹，内容为用geogebra语言绘制该题目图形的代码，如果题目没有图片，则不需要该标签；
+    公式使用LaTeX格式并用$包裹；换行使用<br>；注意要提取所有题目"""
+
+    text = ""
+    result = await call_gemini_api(image_path=image_path, prompt=prompt)
+    if result:
+        text = result.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "")
+    
+    if text:
+        problems = parse_problem_text(text)
+        return problems
+    
+    return []
+
+def parse_all_files(file_dir="pdf_raw", output_file="problems.json"):
     """
     Parses PDFs to extract math problems and saves to JSON.
     Keys: question, answer, final_answer, sol_hint
     """
-    print(f"Parsing PDFs from {pdf_dir}...")
+    print(f"Parsing files from {file_dir}...")
 
     parsed_pdfs = set()
     parsed_pdfs_filename = "parsed_pdfs.txt"
@@ -122,35 +151,49 @@ def parse_pdfs(pdf_dir="pdf_raw", output_file="problems.json"):
             parsed_pdfs = set(line.strip() for line in f)
 
     all_problems = []
-    for filename in os.listdir(pdf_dir):
-        if filename.endswith(".pdf"):
-            pdf_path = os.path.join(pdf_dir, filename)
-            if pdf_path in parsed_pdfs:
-                print(f"Skipping already parsed {pdf_path}")
-                continue
-            
+    for filename in os.listdir(file_dir):
+        file_path = os.path.join(file_dir, filename)
+        # 只保留pdf_raw/{file_dir}/及之后的路径
+        # file_dir 形如 /abs/path/.../pdf_raw/{subdir}
+        # 目标是让save_path为 pdf_raw/{subdir}/filename
+        # 先找到file_dir在cur_dir下的相对路径
+        rel_dir = os.path.relpath(file_dir, cur_dir)
+        save_path = os.path.join(rel_dir, filename)
+        if save_path in parsed_pdfs:
+            print(f"Skipping already parsed {save_path}")
+            continue
+
+        if file_path.endswith(".pdf"):
             try:
-                with open(pdf_path, 'rb') as f:
+                with open(file_path, 'rb') as f:
                     reader = PyPDF2.PdfReader(f)
                     if len(reader.pages) > 50:
-                        print(f"Skipping {pdf_path} because it has more than 50 pages.")
+                        print(f"Skipping {file_path} because it has more than 50 pages.")
                         continue
             except Exception as e:
-                print(f"Failed to read pdf {pdf_path}: {e}")
+                print(f"Failed to read pdf {file_path}: {e}")
                 continue
 
-            print(f"Parsing {pdf_path}...")
-            problems = asyncio.run(parse_pdf(pdf_path))
+            print(f"Parsing {file_path}...")
+            problems = asyncio.run(parse_pdf(file_path))
             if problems:
                 all_problems.extend(problems)
-        
                 with open(output_file, 'a', encoding='utf-8') as f:
                     for problem in problems:
                         f.write(json.dumps(problem, ensure_ascii=False) + "\n")
-                
                 with open(parsed_pdfs_filename, 'a', encoding='utf-8') as f:
-                    f.write(pdf_path + "\n")
+                    f.write(save_path + "\n")
 
+        elif file_path.endswith(".png") or file_path.endswith(".jpg") or file_path.endswith(".jpeg"):
+            print(f"Parsing image {file_path}...")
+            problems = asyncio.run(parse_img(file_path))
+            if problems:
+                all_problems.extend(problems)
+                with open(output_file, 'a', encoding='utf-8') as f:
+                    for problem in problems:
+                        f.write(json.dumps(problem, ensure_ascii=False) + "\n")
+                with open(parsed_pdfs_filename, 'a', encoding='utf-8') as f:
+                    f.write(save_path + "\n")
     print(f"Parsing completed. {len(all_problems)} problems saved to {output_file}")
 
 if __name__ == "__main__":
@@ -159,14 +202,14 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Parse PDFs to extract math problems.")
-    parser.add_argument("--pdf_dir", type=str, default="quark", help="Directory containing PDF files to parse.")
+    parser.add_argument("--file_dir", type=str, default="quark", help="Directory containing PDF files to parse.")
 
     args = parser.parse_args()
 
-    pdf_dir = f"pdf_raw/{args.pdf_dir}" # "pdf_raw/amm"
-    pdf_dir = os.path.join(cur_dir, pdf_dir)
+    file_dir = f"pdf_raw/{args.file_dir}" # "pdf_raw/amm"
+    file_dir = os.path.join(cur_dir, file_dir)
 
-    output_file = f"pdf_parsed/problems_{args.pdf_dir}.json"
+    output_file = f"pdf_parsed/problems_{args.file_dir}.json"
     output_file = os.path.join(cur_dir, output_file)
 
-    parse_pdfs(pdf_dir, output_file)
+    parse_all_files(file_dir, output_file)
